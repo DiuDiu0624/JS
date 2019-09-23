@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+      var data=['福尔摩斯','柯南','喜洋洋','光头强'];
+  </script>
+</head>
+<body>
+  <button>展示书籍</button>
+  <script>
+    document.querySelector('button').onclick=function(){
+      //创建ul
+      var oUl=document.createElement('ul');
+      //遍历数据源
+      data.forEach(function(item){
+        //创建li,并且制定内容
+        var oli=document.createElement('li');
+        oli.innerHTML=item;
+        //加入ul中
+        oUl.appendChild(oli);
+      });
+
+      document.body.appendChild(oUl);
+    };
+  </script>
+</body>
+</html>

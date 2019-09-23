@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            length  可选  ， 产生的验证码的字符数量
+                不指定length,length默认为4
+            flag  可选  
+                不指定flag, flag默认为'd'  , 代表产生的验证码是纯数字
+                如果指定成'a', 代表产生的验证码是纯字母，大小写都可 
+                如果指定成'ad', 代表产生的验证码是字母和数字的混合
+        */
+       var long = +prompt("请输入长度");
+        while (true) {
+             
+        var type = prompt("请选择生成类型\"a\"(纯字母大小写),\"ad\"(纯字母大小写和数字),默认纯数字")
+            if (type === "a" || type === "ad" || type === "") {
+                break;
+            } else {
+                alert("请输入正确选择");
+            }
+        }
+        function getCode(length, flag) {
+            var m = 0;
+            var n = 0;
+            sum = "";
+            length = length || 4;
+
+
+            if (flag === "a") {
+                m = 122;
+                n = 65;
+            } else if (flag === "ad") {
+                m = 122;
+                n = 48;
+            } else {
+                m = 57;
+                n = 48;
+            }
+
+
+            for (var i = 0; i <length; i++) {
+              
+                while (true) {
+                      var b = Math.floor(Math.random() * (m - n + 1) + n);
+                    if ((b < 91 || b > 96) && (b < 58 || b > 64)) {
+                        break;
+                    }
+                }
+                var s = String.fromCharCode(b);
+                sum += s;
+            }
+            return sum;
+        }
+        alert(getCode(long, type))
+
+
+    </script>
+</body>
+
+</html>

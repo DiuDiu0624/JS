@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 40%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .line {
+            background: yellowgreen;
+            color: #fff;
+        }
+
+        .red {
+
+            background-color: red;
+
+        }
+
+        .blue {
+
+            background-color: blue;
+
+        }
+
+        .fff {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var bg;
+        var b = +prompt("请输入人数");
+        var names = [b];
+        var grades = [b];
+        var d;
+        for (var i = 0; i < b; i++) {
+            names[i] = prompt("请输入姓名");
+            grades[i] = +prompt("请输入成绩");
+
+        }
+        document.write("<table>");
+        document.write("<tr class='line'>");
+        document.write("<th>姓名</th>");
+        document.write("<th>编号</th>");
+        document.write("</tr>");
+
+        for (var i = 0; i < b; i++) {
+            if (grades[i] >= 90) {
+                bg = "blue";
+            } else if (grades[i] < 60) {
+
+                bg = "red";
+            } else {
+                bg = "fff";
+            }
+            document.write("<tr class='" + bg + "'>");
+            document.write("<td>" + names[i] + "</td>");
+            document.write("<td>" + grades[i] + "</td> ");
+            document.write("</tr>");
+
+        }
+        document.write("</table>");
+
+        //第一种比大小方法
+        for (var i = 0; i < b - 1; i++) {
+            for (var j = i + 1; j < b; j++) {
+
+                if (grades[i] < grades[j]) {
+                    var d = grades[i];
+                    grades[i] = grades[j];
+                    grades[j] = d;
+                }
+            }
+        }
+        //第二种比大小方法
+        // var min = grades[0];
+        // var max = grades[0];
+        // for (var i = 1; i < b; i++) {
+        //     if (grades[i] < min) {
+        //         min = grades[i];
+        //     }
+        //     if (grades[i] > max) {
+        //         max = grades[i];
+        //     }
+        // }
+        //          
+        //   第三种比大小方法      
+        //          
+        //         
+        //
+        //     
+        // 
+        document.write("最小值是" + grades[b - 1] + ",最大值是" + grades[0]);
+        var NEWgrades = grades;
+        document.write("副本是" + NEWgrades);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function arrayConcat(f1, f2,arr,brr) {
+           var sum = f1(arr)+ "," + f2(brr);
+        //    return sum;
+           console.log(sum);
+        } 
+         var m = +prompt("请输入第一个数组个数");
+        var crr = [];
+        for (i = 0; i < m; i++) {
+            crr[i] = +prompt("请输入第一组数组值");
+        }
+        var n = +prompt("请输入第二个数组个数");
+        var drr = [];
+        for (i = 0; i < n; i++) {
+            drr[i] = +prompt("请输入第二组数组值");
+        }
+        arrayConcat(function (arr) {
+            var s = arr.toString();
+            console.log(s);
+            return s;
+        }, function (brr) {
+            var s1 = brr.toString();
+            console.log(s1);
+            return s1;
+        },crr,drr);
+
+      
+        //console.log(arrayConcat(crr, drr));
+
+    </script>
+</body>
+
+</html>

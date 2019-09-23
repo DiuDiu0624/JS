@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+    <img src="../images/01.jpg" alt="">
+
+    <script>
+
+
+        //点击小图显示大图
+
+              
+                 var o = document.getElementsByTagName("img");
+                   o[0].width = 150;
+                 o[0].onclick = function () {
+                    // this.width = 200;
+                    this.style.transform = "scale(2)";
+                 }
+                 
+    </script>
+    -->
+
+
+
+    <!--
+        //点击按钮修改所有文本框内容
+    <button id="bnt"value="确定" ></button>
+    <script>
+        var a = document.getElementById("bnt");
+        a.value = "取消";
+        //var a = document.getElementById("bnt");
+        //a.onclick = function(){
+           // a.innerHTML = "取消";
+        }
+    </script>
+
+    -->
+    <!---->
+    <img src="../images/01.jpg" alt="" title="123">
+    <img src="../images/02.jpg" alt="" title="456">
+    <img src="../images/03.jpg" alt="" title="789">
+    <script>
+        //点击按钮修改每个图片的title属性
+        var m = document.getElementsByTagName("img");
+        for (var i = 0; i < m.length; i++) {
+            m[i].onclick = function () {
+                this.title = "666";
+            }
+        }
+
+        
+    </script>
+
+</body>
+
+</html>

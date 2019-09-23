@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var str="hello world";
+    // var s=typeof str;//"string"
+    // if(s==='string'){
+    //   alert('字符串');
+    // }
+    // typeof str==='string'?alert('字符串'):alert('非字符串');
+
+    /*
+    6.希望获取到页面中所有的checkbox怎么做？
+      9.把两个数组合并，并删除第二个元素。
+
+      10.定义一个log方法，让它可以代理console.log的方法。
+      12.用函数实现阻止事件冒泡
+
+      13.简述javascript 中的垃圾回收机制
+
+    */
+  </script>
+</head>
+<body>
+  <input type="text">
+  <input type="text">
+  <input type="checkbox">
+  <input type="text">
+  <input type="checkbox">
+  <input type="radio">
+  <script>
+    // var ips=document.querySelectorAll('input');
+    // for(var i=0;i<ips.length;i++){
+    //   if(ips[i].type==='checkbox'){
+    //     console.log(ips[i]);
+    //   }
+    // }
+
+    // var arr=[1,2,3,3,4];
+    // var arr0=['hi','hello','wa','how'];
+    // var arr1=arr.concat(arr0);
+    // arr1.splice(1,1);
+    // console.log(arr1);
+
+    // function log(txt){
+    //   // console.log(txt);
+    //   // console.error(txt);
+    //   console.info(txt);
+    // }
+
+    // log('he');
+
+    //
+    
+
+    function stop(e){
+      // e=window.event||e;
+      // e.stopPropagation();
+      // e.cancelBubble=true;
+      window.event?e.cancelBubble=tru:e.stopPropagation();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function arrayCopy(crr,n) {
+             var arr = [];
+            for (i = 0; i < n; i++) {
+                arr[i] = crr[i];
+            }
+            return arr;
+        }
+        var m = prompt("请输入数组个数");
+        var brr = [];
+        for (i = 0; i < m; i++) {
+            brr[i] = +prompt("请输入数组值");
+        }
+        console.log(arrayCopy(brr,m));
+
+    </script>
+</body>
+
+</html>

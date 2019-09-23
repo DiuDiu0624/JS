@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    //创建学生
+    function createStudent(stuName,age,no){
+      var obj=new Object();
+      //属性
+      obj.stuName=stuName;
+      obj.age=age;
+      obj.no=no;
+      //方法
+      obj.say=function(){
+        console.log(this.stuName+'说的哇哇叫。。。。');
+      };
+      return obj;
+    }
+
+
+    var s1=createStudent('小强',20,'10000');
+    var s2=createStudent('小刚',25,'10001');
+
+    s1.say();
+    s2.say();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

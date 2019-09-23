@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Choice3 = {
+            subject: function () {
+                var n = 0;
+                for (var i = 0; i < 10; i++) {
+                    for (var j = 0; j <= 10; j++) {
+                        if (j % 2 === 0) {
+                            n += j;
+                        } else {
+                            continue;
+                        }
+                    }
+                }
+                console.log(n);
+            },
+            option: ["A. n = 300", "B. n = 250", "C. n = 550", "D. n = 270"],
+            Answer: "A"
+        };
+
+        Choice3.subject();
+    </script>
+</body>
+
+</html>

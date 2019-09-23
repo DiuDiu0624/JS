@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function show(){
+      var arr=[];//空数组
+      for(var i=0;i<3;i++){
+        //将函数存入数组
+        arr.push((function(){
+          return i;
+        })(i));
+      }
+      console.log(arr);
+      //遍历数组
+      // for(var j in arr){
+      //   arr[j]();//执行函数  3
+      // }
+    }
+
+    show();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

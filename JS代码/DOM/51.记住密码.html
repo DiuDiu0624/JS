@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>  
+</head>
+<body>
+    用户名：<input type="text" class="username"><br>
+    密码：<input type="password" class="pwd"><br>
+    <input type="checkbox" class="cbx">记住密码<br>
+    <input type="button" value="登录" class="btn-login">
+    <script>
+    var txtName=document.querySelector('.username');
+    var txtPwd=document.querySelector('.pwd');
+    var cbx=document.querySelector('.cbx');
+    //登录事件
+    document.querySelector('.btn-login').onclick=function(){   
+    // getValue();
+      //记住密码
+      if(cbx.checked){
+        remPwd(txtName.value,txtPwd.value);        
+      }
+    };
+
+    //用户名失去焦点事件
+    txtName.onblur=function(){
+      var userName=this.value;//取出用户名
+      var arr=getValue();
+      var str=JSON.stringify(arr);
+      
+      if(str.indexOf(userName)!=-1){
+        arr.forEach(function(obj){
+          if(obj.name==userName){
+            //填充密码框
+            txtPwd.value=obj.pwd;
+            cbx.checked=true;
+          }
+        });
+      }            
+    };
+
+    //记住密码
+    function remPwd(username,pwd){
+      var person=new Person(username,pwd);//对象
+      //存数据之前，先从本地取出数据，判断，本地若有数据，追加
+      //本地无数据，新建数组
+      var arr=getValue();
+      if(arr==undefined||arr.length==0){
+        arr=[];//初次
+      }      
+      arr.push(person);
+      //将对象数组转换为字符串
+      var ps=JSON.stringify(arr);
+      // console.log(person);
+      // var key=getKey();
+      // console.log(key);
+      
+      //将用户对象保存到本地
+      localStorage.setItem("201971155553",ps);
+    }
+
+    //读取本地数据
+    function getValue(){
+      var str=localStorage.getItem('201971155553');
+      // console.log(str,typeof str);
+      var arr=JSON.parse(str);//将字符串转换为对象
+      return arr;
+    }
+
+    // //获取key
+    // function getKey(){
+    //   var date=new Date();
+    //   var year=date.getFullYear();
+    //   var month=date.getMonth()+1;
+    //   var day=date.getDate();
+    //   var h=date.getHours();
+    //   var m=date.getMinutes();
+    //   var s=date.getSeconds();
+    //   return ''+year+month+day+h+m+s;
+    // }
+
+
+      //构造函数
+      function  Person(name,pwd){
+        this.name=name;
+        this.pwd=pwd;
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  
+    <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+    
+            table {
+                border: 1px solid #ccc;
+                width: 40%;
+                margin: 40px auto 0px;
+                border-collapse: collapse;
+            }
+    
+            caption {
+                margin-bottom: 10px;
+                font-size: 24px;
+            }
+    
+            tr,
+            td,
+            th {
+                border: 1px solid #ccc;
+                height: 36px;
+                font-size: 16px;
+                text-align: center;
+            }
+        </style>
+</head>
+
+<body>
+    编号：<input type="text" id='nos'>
+    姓名：<input type="text" id="names">
+    年龄：<input type="text" id="ages">
+    <button id='btn'>添加</button>
+
+
+
+    <script>
+        var tab = document.createElement("table");
+        tab.createCaption().innerHTML = "信息表";
+
+        var trHead = creatRow(false, "编号", "姓名", "年龄");
+        tab.appendChild(trHead);
+
+
+        var tNo = document.getElementById('nos');
+        var tName = document.getElementById('names');
+        var tAges = document.getElementById('ages');
+        var tBtn = document.getElementById('btn');
+        tBtn.onclick = function () {
+            // console.log(tNo.value, tName.value, tAges.value);
+
+            var b = creatRow(true, tNo.value, tName.value, tAges.value);
+            tab.appendChild(b);
+            document.body.appendChild(tab);
+        };
+
+
+
+
+
+
+        function creatRow(isTd, id, name, age) {
+            var tr = document.createElement("tr");
+
+            var td1 = creatTd(isTd, id);
+            var td2 = creatTd(isTd, name);
+            var td3 = creatTd(isTd, age);
+            // var td4 = creatTd(isTd, add);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            // tr.appendChild(td4);
+
+            return tr;
+        }
+        function creatTd(isTd, content) {
+            var col;
+            if (isTd) {
+                col = document.createElement('td');
+            } else {
+                col = document.createElement('th');
+            }
+            col.innerHTML = content;
+            return col;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var data=[
+      {prov:"河南省",citys:['郑州市','开封市','新乡市','许昌市','平顶山市']},
+      {prov:'山东省',citys:['济南市','青岛市','日照市','泰安市']},
+      {prov:"浙江省",citys:['温州市','杭州','扬州市']},
+      {prov:"广东省",citys:['广州市','东莞市','惠州市','佛山市']}
+    ];
+  </script>
+</head>
+<body>
+  <!-- 省市二级联动 -->
+  <select name="" id="province">
+  </select>
+  <select name="" id="city"></select>
+
+  <script>
+    //查找页面元素
+    var sltPro=document.querySelectorAll('select')[0];
+    var sltCity=document.querySelectorAll('select')[1];
+    //1.初始化页面
+    init();
+    //2.省份选择发生改变时，数据源切换
+    sltPro.onchange=function(){
+      // console.log('run');
+      //1.清空市列表
+      clearCity();
+      //2.生成新的城市列表
+      //遍历数据源
+      for(var i in data){
+        if(this.value===data[i].prov){
+          data[i].citys.forEach(function(item){
+            var op=setOption(item);
+            sltCity.appendChild(op);
+          });
+          break;//结束循环
+        }
+      }
+    };
+
+    //初始化界面
+    function init(){
+      //省初始化
+      //遍历数据源
+      data.forEach(function(obj){
+        //1.完成省的初始化
+        //创建option标签
+        // var op=document.createElement('option');
+        // op.innerHTML=obj.prov;//指定内容
+        var op=setOption(obj.prov);
+        sltPro.appendChild(op);//添加到下拉框中            
+      });
+
+      //市初始化
+      data[0].citys.forEach(function(item){
+        // var op=document.createElement('option');
+        // op.innerHTML=item;//指定内容
+        var op=setOption(item);
+        sltCity.appendChild(op);//添加到下拉框中     
+      });
+    }
+    
+    //设置option
+    function setOption(text){
+      var op=document.createElement('option');
+      op.innerHTML=text;//指定内容
+      return op;
+    }
+    //清空"市"列表
+    function clearCity(){
+      var nodes=sltCity.children;//获取市所有的option      
+      //遍历option  删除option
+      for(var i=0,len=nodes.length;i<len;i++){
+        sltCity.removeChild(nodes[0]);
+      }
+    }
+  </script>
+</body>
+</html>

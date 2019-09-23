@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>示例</title>
+  <script>
+    /*
+      DOM树是一个由节点组成的树状结构
+
+      节点：元素节点、属性节点、文本节点、注释节点.....
+
+
+      window:唯一的，顶级的   对象
+
+        alert
+        prompt
+        confrim
+        setTimeout
+        setInterval
+        ...
+
+      documnt：唯一的、顶级   对象
+        属性：
+          body
+          forms
+          images
+          title
+          URL
+        方法：
+          getElementById    根据ID查找页面元素    节点(DOM)对象或者null
+          根据标签名：
+            getElementsByTagName                 返回值是集合
+          根据类名：
+            getElementsByClassName               返回值是集合
+          根据名称查找节点对象：
+            getElementsByName
+
+          根据选择器找元素：
+            querySelector(slt)
+              注意：若查找对象包含多个元素，只取第一个
+            querySelectorAll(slt)
+
+
+    */
+
+    console.log(window.document);
+    // var o=document.getElementById('box');
+    // console.log(o);
+    
+  </script>
+</head>
+<body>
+  <div class="banner">
+    <div id="box">我好</div>
+    <p>你好</p>
+  </div>
+  <form class="" report-submit="false" bindsubmit="" bindreset="">
+    <input type="submit">
+  </form>
+  <p>hello</p>
+  <form class="" report-submit="false" bindsubmit="" bindreset="">
+    
+    </form>
+    <img src="" alt="">
+    <img src="" alt="">
+</body>
+<script>
+  // console.log(document.body);
+  // console.log(document.forms);//集合  伪数组
+  // //提交事件
+  // document.forms[0].onsubmit=function(){
+  //   return false;
+  // };
+  // console.log(document.images);//集合  伪数组
+  // console.log(document.title);
+  // console.log(document.URL);
+
+  // var o=document.getElementById('box');
+  //   console.log(o);
+
+  //   var os=document.getElementsByTagName('div');
+  //   console.log(os);
+
+  //   var cls=document.getElementsByClassName('banner');
+  //   console.log(cls[0]);
+
+
+    // var o=document.querySelector('div');
+    // console.log(o);
+
+    // var o1=document.querySelector('#box');//选择器
+    // console.log(o1);
+
+    // var o2=document.querySelector('.banner');
+    // console.log(o2);
+
+    // // var o3=document.querySelector('div p');//后代选择器
+    // var o3=document.querySelector('.banner p');//后代选择器
+    // o3.innerHTML='大家好';
+
+
+    var os=document.querySelectorAll('div');
+    console.log(os);
+
+    var o=document.querySelectorAll('#box');
+    console.log(o);
+    o[0].innerHTML='hello world';
+
+    var os1=document.querySelectorAll("div p");
+    console.log(os1);
+
+
+
+
+</script>
+</html>

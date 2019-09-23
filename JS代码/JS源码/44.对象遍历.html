@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var data={
+      width:'100px',
+      height:'100px',
+      backgroundColor:'red'
+    };
+  </script>
+</head>
+<body>
+  <div></div>
+
+  <script>
+    var o=document.querySelector('div');
+    for(var i in data){
+      console.log(i,typeof i);
+      o.style[i]=data[i];
+    }
+
+
+    var obj={
+      name:'李四'
+    };
+    console.log(obj.name);
+    console.log(obj['name']);
+
+    // var h='height';
+    // // o.style.height='200px';
+    // o.style.h='200px';
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*
+      字符串:字符组成的集合
+
+      charAt()    根据索引找字符
+      concat()    合并
+      indexOf()   查找字符在母串中的位置   返回第一个    -1
+      slice(start ,end)  截取字符串
+      split()      分割为数组
+      substring(start,end)   截取字符串
+
+      toUpperCase  大写
+      toLoweCase   小写
+    */
+
+    // var str="A";
+    // var obj=new String("A");
+    // console.log(str===obj);
+    // console.log(obj);
+
+    // var obj={name:'小王'};
+    // var o1={name:"小王"};
+    // console.log(obj==o1);//地址不一样
+    // console.log([]==[]);//地址不一样
+
+    // var str='hello';
+    // var c=str.charAt(0);
+    // console.log(c);
+
+
+    //数组能被修改
+    //字符串不能被修改
+
+    // var str='hello';
+    // // str[0]='w';
+    // var s=str+'000';
+    // console.log(str);
+    // var idnex=str.indexOf('l');
+    // var s=str.replace('l','0');
+    // var s=str.replace(/l/g,'0');
+    // console.log(s);
+
+    //校验密码   密码是6位数字
+    // var pwd='12345a';
+    // var p=/^\d{6}$/;
+    // console.log(p.test(pwd));
+
+    var str='hello world';
+    var arr=str.split('');
+    console.log(arr);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

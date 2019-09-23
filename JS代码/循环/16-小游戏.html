@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = +prompt("请输入0.1.2");
+        var rn = Math.random() * 2;
+        var num = Math.ceil(rn);
+        if((a===0 && num===2)||(a===1 && num===0)||(a===2 && num===1)){
+            alert("随机数字是：" + num + ",你赢了")
+        }
+        else if(a===num){
+            alert("平局")
+        }
+        else{
+            alert("随机数字是：" + num + ",你输了")
+        }
+    </script>
+</body>
+
+</html>

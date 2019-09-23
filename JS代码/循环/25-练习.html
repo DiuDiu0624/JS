@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习循环</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        //输出100以内与7有关的数
+
+        /*var sum = 0;
+        for (var i = 0; i <= 100; i++) {
+            if (i % 7 === 0 || i % 10 === 7 || Math.floor(i / 10) === 7) {
+                document.write(i + "<br\>");
+                sum++;
+            }
+        }
+        alert("一共有" + sum + "个数");
+        */
+
+        //输出从1到100之间所有不能被3整除的数;并输出这些整数的和
+        /*var sum=0;
+        for (var i = 1; i <= 100; i++) {
+            if (!(i % 3 === 0)) {
+                document.write(i+"<br\>");
+              sum+=i;
+            }
+
+
+        }
+
+        alert(sum);
+        */
+
+        //做一个小游戏，报7游戏的安全数（轮流报数，报到能被7整除或者尾数是7都要表演节目），报出1-100之间的安全数
+        /*var sum=0;
+        for (var i =1;i<=100;i++) {
+            if (i % 7 === 0 || i % 10 === 7 ) {
+               continue;
+            }
+            document.write(i + "<br\>");
+                sum++;
+        }
+        alert("一共有" + sum + "个数");
+        */
+        /*var sum=0;
+        for (var i =1;i<=100;i++) {
+            if (!(i % 7 === 0 || i % 10 === 7 )) {
+                document.write(i + "<br\>");
+                sum++;
+            }
+
+        }
+        alert("一\共有" + sum + "个数");
+        */
+
+
+        //打印水仙花数（三位数），（153=1*1*1*1+5*5*5+3*3*3）每位数字的立方和等于等于该数即水仙花数，打印出所有水仙花数。
+
+        /* for (i = 100; i < 1000; i++) {
+             var a = i % 10;
+             var b = ((i - a) % 100)/10;
+             var c = Math.floor(i / 100);
+             if (a * a * a + b * b * b + c * c * c === i) {
+                 document.write(i+"</br>");
+             }
+         }
+         */
+
+        //求10的阶乘
+        /*var sum = 1;
+        var num = 10;
+        for (var i = 1; i <= num; i++) {
+            sum *= i;
+
+        }
+        document.write(num+"!="+sum);
+        */
+
+
+        //九九乘法口诀表
+        /*for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j < i+1; j++) {
+                document.write(j + "*" + i+"="+i * j+"&nbsp&nbsp&nbsp")
+            }
+            document.write("<br\>")
+        }
+        */
+
+
+
+
+
+        //打印1--100以内的质数（只能被1和其本身整除的数就是质数，1不是质数）
+        /*var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            for (var j = 2; j <= i - 1; j++) {
+                if (i % j === 0) {
+                    break;
+                }
+            }
+            if (i === j) {
+                sum++;
+                document.write(i + "是质数<br\>")
+            }
+        }
+        document.write( "一共有"+sum+"个质数")
+        
+*/
+
+
+        //任意输一个三位数，输出反序。123输出321
+        /* while (true) {
+             var i = +prompt("请输入一个三位数");
+             var a = i % 10;
+             var b = ((i - a) % 100) / 10;
+             var c = Math.floor(i / 100);
+             var d = 100 * a + 10 * b + c;
+             alert("您的数字是" + d);
+             var answer = prompt("还要继续吗？y/n");
+             if (answer === "n") {
+                 break;
+             }
+         }
+ */
+    </script>
+</body>
+
+</html>

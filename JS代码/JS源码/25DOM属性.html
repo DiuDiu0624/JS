@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .one{width: 150px;height: 150px;border: 1px solid gray;padding: 2px;}
+  </style>
+</head>
+<body>
+  <img src="images/1.jpg" alt="">
+  <a href="#">link</a>
+  <input type="text" class="txt">
+
+  <script>
+    /*
+      1.document对象
+      2.DOM对象的属性(内置属性)
+      3.DOM对象的方法(内置方法)
+      4.主动操作页面元素属性
+          1)获取属性
+            对象.属性名
+            对象[属性名]
+            对象.getAttribute(属性名)
+          2)设置属性
+            对象.属性名=属性值
+            对象[属性名]=属性值
+            对象.setAttribute(attr,value)
+
+            注意：除了set和get形式，其他对于特殊属性需要变形
+    */
+
+
+    var oImg=document.images[0];
+    var oTxt=document.querySelector('input');
+    // oTxt.value=oImg.src;
+    // oTxt.value=oImg.getAttribute('src');
+    // oTxt.value=oImg['src'];
+    // var oSrc=oImg.src;
+    // oTxt['value']=oSrc;
+    // oTxt.setAttribute('value',oSrc);
+
+    // oImg.className='one';
+    // oImg['className']='one';
+    oImg.setAttribute('class','one');
+
+    // oTxt.value=oImg['className'];
+    oTxt.value=oImg.getAttribute('class');
+
+    //超链接
+    document.links[0].href='http://www.baidu.com';
+  </script>
+</body>
+</html>

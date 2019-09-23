@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    div{text-align: center;}
+    canvas{border: 1px solid gray;}
+    img{position: absolute;}
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <!-- <img src="images/2.jpg" alt="" style="width: 150px;height:150px;">  -->
+  <div>
+    
+  <!-- 画布 -->
+  <canvas id="cvs" width="800" height="500"></canvas>
+</div>
+
+<script>
+  var cvs=document.querySelector('#cvs');
+  //获取画笔对象
+  var ctx=cvs.getContext("2d");//上下文对象
+
+  // ctx.strokeText('Hello world',100,100);
+  // ctx.font="40px Arial";
+
+  // ctx.strokeText('你好',100,100);
+  // ctx.fillText('你好',100,100);
+
+//绘制图片
+  var img=document.createElement('img');
+  img.src="images/1.jpg";
+
+  // window.onload=function(){
+  //     ctx.drawImage(img,10,10);//绘制到(10,10)
+  // };
+
+setTimeout(function(){
+  ctx.drawImage(img,10,10,50,50);//绘制到(10,10)
+  var count=50;
+  setInterval(function(){
+    count++;
+    ctx.drawImage(img,count,count);
+  },20);
+},50);
+
+
+  
+
+
+</script>
+</body>
+</html>

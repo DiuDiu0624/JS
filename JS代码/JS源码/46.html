@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      h2{text-align: center;}
+      div{float: left;height: 800px;}
+      .left{border-right: 1px solid gray;padding-left: 50px;width:35%;}
+      input[type='text'],
+      input[type='password']{height: 20px;width: 220px;margin-top: 15px;}
+      .btn-reg{width: 80px;height: 35px;display: inline-block;
+      margin: 20px 100px;}
+      .right{text-align: center;}
+      table{width: 500px;margin: 50px 30px;border: 1px solid gray;
+        border-collapse: collapse;}
+      th,td{text-align: center;line-height: 35px;border: 1px solid gray;}
+  </style>
+</head>
+<body>
+  <div class="left">
+    <h2>注册</h2>
+    <label for="">用户名：</label><input type="text" id="txt-name"><br>
+    <label for="">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label><input type="password" id="txt-pwd"><br>
+    <label for="">性&nbsp;&nbsp;&nbsp;&nbsp;别：</label><input type="radio" checked name="sex" value="1">男<input name="sex" type="radio" value="0">女<br>
+    <label for="">电&nbsp;&nbsp;&nbsp;&nbsp;话：</label><input type="text" id="txt-tel"><br>
+    <input type="button" value="注册" class="btn-reg">
+  </div>
+  <div class="right">
+    <table>
+      <caption>人员信息表</caption>
+      <thead>
+        <tr>
+          <th>用户名</th>
+          <th>密码</th>
+          <th>性别</th>
+          <th>电话</th>
+          <th>删除</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+      /*
+        1）点击注册按钮，注册人员信息，在右边表格中(人员信息表)出现新增人员信息
+        2）关闭页面，重新打开页面后，人员信息表中依然有已注册人员信息
+        3)点击删除按钮，将人员移除(重新打开页面后，该人员也不存在)
+      */
+
+      //查找元素
+      var txtName=document.querySelector('#txt-name');
+      var txtPwd=document.querySelector('#txt-pwd');
+      var txtTel=document.querySelector('#txt-tel');
+      var gs=document.getElementsByName('sex');
+      var tbody=document.querySelector('tbody');
+      var KEY="201907020933";//数据保存在本地时的key
+
+      init();//初始化页面
+      
+      //注册事件
+      document.querySelector('.btn-reg').onclick=function(){
+        //读取页面数据
+        var gender=getGender();
+        //数据校验
+        //将数据写入本地    
+        writeDate(txtName.value,txtPwd.value,txtTel.value,gender);
+        //将数据写入表格  在表格中追加行
+        createTr(txtName.value,txtPwd.value,gender,txtTel.value);
+      };
+
+      //初始化页面
+      function init(){
+        var arr=getData();
+        if(arr==undefined){
+          return;//本地无数据
+        }
+        //遍历数组
+        arr.forEach(function(obj){
+          createTr(obj.username,obj.pwd,obj.gender,obj.tel);
+        });
+        
+      }
+
+      //创建行
+      function createTr(username,pwd,gender,tel){
+        var tr=tbody.insertRow();//插入行
+          tr.insertCell().innerHTML=username;//用户名
+          tr.insertCell().innerHTML=pwd;//密码
+          tr.insertCell().innerHTML=gender;//性别
+          tr.insertCell().innerHTML=tel;//电话
+          var td=tr.insertCell();//最后一列 删除
+          var link=document.createElement('a');
+          link.href="javascript:void(0)";//阻止默认事件
+          link.innerHTML="删除";
+          link.onclick=function(){
+            //1.在表格中删除行
+            var dTr=this.parentNode.parentNode;//行对象
+            dTr.parentNode.removeChild(dTr);
+            //2.删除本地数据
+            var username=dTr.children[0].innerHTML;//被删除对象的用户名
+            deleteData(username);//删除数据
+          };
+          td.appendChild(link);//将超连接放入td
+      }
+
+      //将数据写入本地
+      function writeDate(username,pwd,tel,gender){
+        var user=new User(username,pwd,tel,gender);//用户对象
+        //判断本地是否已有数据，若没有数据则认为第一次，否则，追加数据
+        var arr=getData();
+        if(arr==undefined){
+          //第一次
+          arr=[];
+        }
+        arr.push(user);//将数据添加到数组中
+        //将数组写入本地
+        localStorage.setItem(KEY,JSON.stringify(arr));
+      }
+
+      //从本地获取数据
+      function getData(){
+        var strUser=localStorage.getItem(KEY);//
+        return JSON.parse(strUser);//返回值为数组
+      }
+
+      //获取被选中的性别
+      function getGender(){
+        var gender;//性别
+        for(var i=0;i<gs.length;i++){
+          if(gs[i].checked){
+            if(gs[i].value=='0'){
+              gender='女';
+            }else{
+              gender='男';
+            }
+          }
+        }
+        return gender;
+      }
+
+      //删除数据
+      function deleteData(username){
+        var arr=getData();
+        //遍历数组
+        for(var i in arr){
+          var obj=arr[i];//用户对象
+          if(obj.username==username){
+            arr.splice(i,1);//删除对象
+            break;//找到数据，结束循环
+          }
+        }
+        //将删除后的数据写入本地
+        localStorage.setItem(KEY,JSON.stringify(arr));
+      }
+
+      //用户构造函数
+      function User(username,pwd,tel,gender){
+        // this.id=时间戳；
+        this.username=username;
+        this.pwd=pwd;
+        this.tel=tel;
+        this.gender=gender;
+      }
+  </script>
+</body>
+</html>

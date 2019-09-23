@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{width: 100px;height: 100px;background-color: pink;}
+  </style>
+  <script>
+    /*
+      DOM元素样式的获取和设置：
+        1）获取
+          对象.style.样式名                  只能读取行内样式
+          window.getComputedStyle(对象,null)
+
+          offset--         只读属性
+            offsetWidth  offsetHeight ......
+        2)设置
+          对象.style.样式名=样式值;
+    */
+  </script>
+</head>
+<body>
+  <div></div>
+  <p>大连房价打死了开发建设领导看风景搜ID如我色副驾驶的路口附近</p>
+  <script>
+    var op=document.querySelector('p');
+    var o=document.querySelector('div');
+
+    // op.style.color='red';
+    // op.style.fontSize='20px';
+
+    o.onclick=function(){
+      var color=window.getComputedStyle(o,null).backgroundColor;
+      op.style.color=color;
+    
+    };
+   
+  </script>
+</body>
+</html>

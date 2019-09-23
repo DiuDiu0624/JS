@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //一球从100米高度自由落下，每次落地后反跳回原高度的一半；再落下，求它在 第10次落地时，共经过多少米？第10次反弹多高？
+        // a为高度 b为每次的距离，b=b+（b/2）
+        var b = 100;
+        for (var i = 1; i < 10; i++) {
+            b = 100 + (b / 2);
+        }
+    </script>
+</body>
+
+</html>

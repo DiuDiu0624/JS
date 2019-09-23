@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>while</title>
+</head>
+
+<body>
+    <script>
+        var num = 0;
+        var wins = 0;
+        while (true) {
+
+            var result;
+            var player = +prompt("石头（0）剪刀（1）布（2）");
+            var computer = Math.floor(Math.random() * 3);
+            num++;
+            var splayer;
+            var scomputer;
+
+            switch (player) {
+                case 0:
+                    splayer = "石头";
+                    break;
+                case 1:
+                    splayer = "剪刀";
+                    break;
+                case 2:
+                    splayer = "布";
+                    break;
+            }
+            switch (computer) {
+                case 0:
+                    scomputer = "石头";
+                    break;
+                case 1:
+                    scomputer = "剪刀";
+                    break;
+                case 2:
+                    scomputer = "布";
+                    break;
+            }
+            if (player === 0 && computer === 2 || player === 1 && computer === 0 || player === 2 && computer === 1) {
+                result = "您赢了";
+                wins++;
+            } else if (player === computer) {
+                result = "平局";
+            } else {
+                result = "您输了";
+            }
+            alert("您的选择是" + splayer + ",计算机选择的是" + scomputer + ",结果是" + result);
+            var answer = prompt("还要继续吗？y/n");
+            if (answer === "n") {
+                break;
+            }
+        }
+        alert("您一共玩了" + num + "次，赢了" + wins + "次");
+    </script>
+</body>
+
+</html>

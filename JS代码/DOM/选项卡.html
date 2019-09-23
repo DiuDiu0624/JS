@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            height: 600px;
+            margin: 30px auto;
+            border: 1px solid #ddd;
+        }
+
+        .box ul {
+            width: 100%;
+            list-style: none;
+            clear: both;
+        }
+
+        .box .title li {
+            width: 200px;
+            float: left;
+            border-bottom: 1px solid #ddd;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .box .title ul li.on {
+            background-color: pink;
+
+        }
+
+        .box .content li {
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        .content li {
+            display: none;
+        }
+
+        .content .on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">
+            <ul>
+                <li class="on">aaa</li>
+                <li>bbb</li>
+                <li>ccc</li>
+                <li>ddd</li>
+            </ul>
+        </div>
+        <div class="content">
+            <ul>
+                <li class="on">111111</li>
+                <li>222222</li>
+                <li>333333</li>
+                <li>555555</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // var titles = document.getElementsByClassName("title")[0].getElementsByTagName("li");
+        // var contents = document.getElementsByClassName("content")[0].getElementsByTagName("li");
+        // for (var i = 0; i < titles.length; i++) {
+        //     titles[i].dataset.index = i;
+        //     titles[i].onmouseover = function () {
+        //         var index = +this.dataset.index;
+        //         for (var j = 0; j < titles.length; j++) {
+        //             titles[j].className = "";
+        //         }
+        //         this.className = "on";
+        //         for (var m = 0; m < contents.length; m++) {
+        //             contents[m].className = "";
+        //         }
+        //         contents[index].className = "on";
+        //     }
+        // }
+
+
+
+
+
+
+        var titles = document.getElementsByClassName("title")[0].getElementsByTagName("li");
+        var contents = document.getElementsByClassName("content")[0].getElementsByTagName("li");//提取每一个li元素
+        var f = 0;//移动前的次数
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].dataset.index = i;//将i的值附在新属性上
+            titles[i].onmouseover = function(){
+                var index = +this.dataset.index;//将属性值附在新变量
+                titles[f].className = "";//前一次的为普通变化
+                titles[index].className = "on";//经过变化
+                contents[f].className = "";
+                contents[index].className = "on"; 
+                f = index;//将变化过的赋值给f，变为上一次
+            }
+        }
+    </script>
+</body>
+
+</html>

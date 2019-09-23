@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+      函数：就是一种封装
+        定义：function 函数名(){}
+
+        理想状态，一个函数内只有一个功能
+        函数不能自己执行，需要被调用才可以执行
+          函数名()
+        理论上函数可以有无限多个参数        形参  实参
+    */
+
+    // getSum();
+
+    //求1--100以内偶数的和
+    function getSum(m, n) {
+      if (m >= n) { return; }
+      var sum = 0;
+      for (var i = m; i < n; i++) {
+        // if(i%2!=0){
+        //   continue;
+        // }
+        if (i % 2 != 0) continue;
+        sum += i;
+      }
+      console.log(sum);
+    }
+
+
+    // getSum(50);
+    // getSum(20);
+    // getSum(10);
+    getSum(5, 10);
+
+      // console.log(getSum,typeof getSum,getSum instanceof Object);
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  用户名：<input type="text" class="username"><br>
+  密码：<input type="password" class="pwd"><br>
+  <input type="button" value="登录">
+
+  <script>
+    var txtName=document.querySelector('.username');
+    var txtPwd=document.querySelector('.pwd');
+
+    //添加点击事件  
+    document.querySelector("input[type='button']").onclick=function(){
+      // console.log(txtName.value,txtPwd.value);
+      //保存本地
+      localStorage.setItem('uname',txtName.value);
+      localStorage.setItem('pwd',txtPwd.value);
+      // sessionStorage.setItem('username',txtName.value);
+      //跳转新页面
+      window.open('./success.html');
+    };
+  
+  </script>
+</body>
+</html>

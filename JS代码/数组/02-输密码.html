@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var time = 3;
+        for (var i = 1; i <= time; i++) {
+            var name = prompt("请输入用户名");
+            var mima = +prompt("请输入密码");
+            if (name === "admin" && mima === 123) {
+                alert("登陆成功");
+                break;
+            }
+            else {
+                alert("登陆失败，还有" + (time - i) + "次机会"+time--);
+                while ((time - i) === 0) {
+                    alert("无权登录系统");
+                    break;
+                }
+
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>

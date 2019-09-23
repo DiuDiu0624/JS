@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>取款</title>
+</head>
+
+<body>
+    <script>
+        while (!(username === "1001" && mima === "123456")) {
+            var username = prompt("请输入卡号");
+            var mima = prompt("请输入密码");
+            var money = 500;
+
+            if (username === "1001" && mima === "123456") {
+                while (true) {
+                    var qukuan = +prompt("当前余额为" + money + ",请取款")
+
+
+                    // var qukuan = +prompt("当前余额为" + money + ",请取款")
+                    if (qukuan > money) {
+                        // var yue = (money - qukuan);
+                        alert("余额不足，取款失败")
+                    }
+
+                    else {
+                        // var yue = (money - qukuan);
+                        alert("取款成功,您的余额为" +(money - qukuan )+ "元")
+                        break;
+                    }
+                }
+            }
+            else {
+                alert("密码或用户名错误")
+            }
+
+
+            break;
+        }
+i
+    </script>
+</body>
+
+</html>

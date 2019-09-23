@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*
+      松耦合
+
+      异步：setTimeout和setInterval
+      事件：
+        三要素：事件对象、事件名、事件处理函数
+        1)将事件以属性的形式写入HTML中
+        2)脚本模型(现事件绑定)  对象.on-事件名=fn;
+        3)W3C事件
+          addEventListener(事件名,fn,false);//添加事件监听
+          removeEventListener(事件名,fn,false);//删除事件监听
+    */
+  </script>
+</head>
+<body>
+  <button onclick="show()"> 点我</button>
+  <button>点点我</button>
+  <a href="http://www.baidu.com">点我试试</a>
+  <a href="javascript:void(0)">试试</a>
+  <script>
+    // function show(){
+    //   alert('哈哈哈');
+    // }
+
+    document.querySelectorAll('button')[1].onclick=function(){
+      alert('哈哈哈哈哈');
+    };
+
+    document.links[0].onclick=function(){
+      alert('我是超链接');
+      return false;//取消标签默认行为
+    };
+    // document.link[0].onclick =function(){
+    //   alert
+    // }
+
+  //obj.onclick=null;
+  </script>
+</body>
+</html>

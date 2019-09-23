@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>嵌套倒三角</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 21px;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var b = 8;
+        var row = 15;
+        for (var s = 1; s <= b; s++) {
+            for (var i = 1; i <= b - s + row; i++) {
+                document.write("<span>&nbsp</span>");
+            }
+            for (var n = 1; n <= 2 * s - 1; n++) {
+
+                document.write("<span>#</span>");
+            }
+
+
+            document.write("<br/>");
+        }
+        for (var s = b-1; s >= 1; s--) {
+            for(var i = 1;i<=b-s+row;i++){
+                document.write("<span>&nbsp</span>");
+            }
+            for (var n = 2 * s - 1; n >= 1; n--) {
+                document.write("<span>#</span>");
+            }
+        
+            document.write("<br/>");
+        }
+    </script>
+</body>
+
+</html>

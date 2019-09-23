@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    //构造函数  模板
+    function Student(no,name,age){
+        this.name=name;
+        this.age=age;
+        this.no=no;
+        //方法
+        this.test=function(){
+          console.log(this.name+"在考试》。。。。");
+        };
+    }
+
+    var s=new Student('1002','王刚',30);
+    s.test();
+
+    var s1=new Student('1001','李刚',20);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

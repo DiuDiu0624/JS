@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var getSum=function(a,b){
+      // console.log(a+b);
+      return a+b;
+    };
+
+    // var s=getSum(10,20);
+    // console.log(s);
+
+
+    // (function(a,b){
+    //   if(a>b){
+    //     console.log(a-b);
+    //   }else{
+    //     console.log(b-a);
+    //   }
+    // })(50,30);
+
+      // var num=(function(a){
+      //   if(a){
+      //     return 100;
+      //   }
+      //   return 0;
+      // })(false);
+
+      // console.log(num);
+
+
+      //setInteval  setTimeout
+
+      //异步   同步
+
+      //同步  异步   回调   promise
+
+      // setTimeout(show,1000);
+
+      // setTimeout("show()",1000);
+
+
+      // function show(){
+      //   console.log('hello');
+      // }
+
+
+      // setTimeout(function(){
+      //   console.log('wrold');
+      // },1000);//异步
+
+      // console.log('hello');//同步
+
+      // setTimeout(function(){
+      //   console.log('wrold');
+      // });//异步
+
+      // setInterval(function(){
+      //   console.log('哈哈哈');
+      // },1000);
+
+
+
+
+        setInterval(function(a,b){
+          console.log(a+b);
+        },1000,100,90);
+
+        // setInterval("show(10)",1000);
+        // setInterval(show,1000,10);//第二个参数之后的数据是函数的参数
+
+        // function show(a){
+        //   console.log(a);
+        // }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*
+      DOM节点属性：
+        childNodes  集合  包含文本节点和元素节点
+        children    集合  只包含元素节点
+        parentNode  父节点
+        previousSibling  上一个兄弟节点
+        nextSibling      下一个兄弟节点
+
+
+        innerHTML
+        innerText
+        
+    */
+  </script>
+</head>
+<body>
+  <div>你好</div>
+  <p>段落</p>
+  <div>哈哈哈</div>
+
+  <script>
+    var os=document.body.childNodes;
+    console.log(os);
+    
+    var os1=document.body.children;
+    console.log(os1);
+    var po=document.body.parentNode;
+    console.log(po);
+
+    // var op=document.body.children[1];
+    // op.innerText='hello world';
+    // // op.innerText='<p>你好</p>';
+    // // op.innerHTML="<p>你好</p>";
+
+    // op.nextSibling.nextSibling.innerHTML='哈哈哈哈哈哈哈';
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+      /*
+        Web存储：
+          localStorage     :持久化(永久存储)
+          sessionStorage  : 用于保存临时数据，当页面关闭时删除数据
+
+        常用方法：
+          setItem(key,value)   存储数据  注意：只支持字符串格式
+          getItem(key)         读取数据
+          removeItem(key)      删除指定数据
+          clear()              清除数据
+          key(index)           根据索引获取key
+      */
+  </script>
+</head>
+<body>
+  用户名：<input type="text" class="username"><br>
+  密码：<input type="password" class="pwd"><br>
+  <input type="button" value="注册">
+
+  <script>
+    var txtName=document.querySelector('.username');
+    var txtPwd=document.querySelector('.pwd');
+
+    //添加点击事件  
+    document.querySelector("input[type='button']").onclick=function(){
+      // console.log(txtName.value,txtPwd.value);
+      //保存本地
+      localStorage.setItem('uname',txtName.value);
+      localStorage.setItem('pwd',txtPwd.value);
+    };
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+      /*
+        DOM节点对象的方法：
+          appendChild
+          createElement
+          createTextNode
+
+          insertBefore
+
+          removeChild
+
+          replaceNode   替换节点
+
+          cloneNode
+
+      */
+    </script>
+  </head>
+  <body>
+    <div class="one"></div>
+    <script>
+      // document.body.removeChild
+
+      var o=document.querySelector('.one');
+      //创建段落对象
+      var op=document.createElement('p');
+      //1.
+      // op.innerHTML='hello';
+      //2.创建文本节点
+      var oTxt=document.createTextNode('我是被创建的');
+      op.appendChild(oTxt);
+      
+      o.appendChild(op);
+
+      o.removeChild(op);
+    </script>
+  </body>
+  </html>

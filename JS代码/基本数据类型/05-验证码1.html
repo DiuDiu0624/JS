@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            length  可选  ， 产生的验证码的字符数量
+                不指定length,length默认为4
+            flag  可选  
+                不指定flag, flag默认为'd'  , 代表产生的验证码是纯数字
+                如果指定成'a', 代表产生的验证码是纯字母，大小写都可 
+                如果指定成'ad', 代表产生的验证码是字母和数字的混合
+        */
+
+
+
+        while (true) {
+            var long = +prompt("请输入长度");
+            var type = prompt("请选择生成类型\"a\"(纯字母大小写),\"ad\"(纯字母大小写和数字),默认纯数字");
+            if (!(isNaN(long)) && type === "a" || type === "ad" || type === "") {
+                break;
+            } else {
+                alert("请输入正确选择");
+            }
+        }
+
+        function getCode(length, flag) {
+            var arr = [];
+            var brr = [];
+            var crr = [];
+            for (var i = 0; i < 26; i++) {
+                arr[i] = String.fromCharCode(65 + i);
+                brr[i] = String.fromCharCode(97 + i);
+            }
+            crr = arr.concat(brr);
+            var num = [];
+            for (var i = 0; i < 10; i++) {
+                num[i] = i;
+            }
+            var drr = num.concat(crr);
+            var frr = [];
+            if (flag === "" || length === null) {
+                if (length === 0 || length === null) {
+                    length = 4;
+                }
+                // flag = "d";
+
+                for (var i = 0; i < length; i++) {
+                    frr[i] = num[Math.floor(Math.random() * 10)];
+                }
+                return frr.join();
+            } else if (flag === "a") {
+                if (length === 0 || length === null) {
+                    length = 4;
+                }
+                for (var i = 0; i < length; i++) {
+                    frr[i] = crr[Math.floor(Math.random() * 52)];
+                }
+                return frr.toString();
+            } else if (flag === "ad")  {
+                if (length === 0 || length === null) {
+                    length = 4;
+                }
+                for (var i = 0; i < length; i++) {
+                    frr[i] = drr[Math.floor(Math.random() * 62)];
+                }
+                return frr.join();
+            }
+        }
+
+        alert(getCode(long, type));
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // function getMax(arr) {
+        //     var b = +prompt("请输入数组个数");
+        //     return Math.max(arr[i]);
+        //     for (var i = 0; i < b; i++) {
+        //         arr[i] = +prompt("请输入数组");
+
+        //     }
+        // }
+        // var num = prompt("请输入数组数字");
+        function getMin(arr) {
+            var min = arr[0]
+            for (var i = 1; i < arr.length; i++) {
+                if (min > arr[i]) {
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+        var n = +prompt("请输入数组个数");
+        var brr = [];
+        for (var i = 0; i < n; i++) {
+            brr[i] = +prompt("请输入数值");
+        }
+        console.log(getMin(brr));
+    </script>
+</body>
+
+</html>

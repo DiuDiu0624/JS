@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn(f1, f2, n) {
+            f1(n);
+            f2(n);
+        }
+        var m = prompt("请输入一个数值");
+        fn(function (a) {
+            if (!isNaN(a)) {
+                console.log(a);
+            } else {
+                alert("请输入有效数值");
+            }
+        }, function (b) {
+            if (isNaN(b)) {
+                console.log(b);
+            } else {
+                alert("为有效数值");
+            }
+        }, m);
+    </script>
+</body>
+
+</html>

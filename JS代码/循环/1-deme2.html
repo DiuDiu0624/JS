@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 随机产生一个0-9之间的整数, 接受用户输入的一个整数，判断用户的数据与随机数之间关系
+        var a = prompt("请输入一个0-9的整数");
+
+        var rn = Math.random() * 10;
+
+        var num = Math.ceil(rn);
+        if (a < num) {
+            alert("随机数字是：" + num + ",你输了");
+
+        } else if (a == num) {
+            alert("随机数字是：" + num + ",平局");
+        } else {
+            alert("随机数字是：" + num + ",你赢了");
+        }
+       
+
+    </script>
+</body>
+
+</html>

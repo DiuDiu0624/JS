@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    //arguments  对象  集合对象   保存了接收到的参数
+    //索引      length
+
+    function  show(a,b){
+      // console.log(arguments[0]);
+      // console.log(arguments);
+      if(arguments.length==2){
+        return a+b;
+      }
+      return a*a;
+    }
+
+    // show(10,20);
+    // show(10,20,30,40);
+    console.log(show(10,90));
+    console.log(show(90));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>高级函数</title>
+</head>
+<body>
+
+    <script>
+
+
+        /*
+    
+        function fn(f){         //把函数当成参数进行传值；
+            console.log("哈哈!");
+                                 //调用函数；
+        }
+
+        fn(function (){
+            console.log("呵呵!");
+        });
+        */
+
+
+
+        // 通过函数判断是不是一个数值
+        /*
+        function fn(f1,n){
+            if(!isNaN(n)){          //isNaN    不是一个数值返回true      是一个数值返回false；
+                var m = +n;
+                console.log(m);
+                f1();                
+            } else{
+                console.log(n);
+                console.log("这不是一个数值");
+            }
+        }
+
+        var a = prompt("请输入一个数值：");
+        fn(function (){
+            console.log("这是一个数值。")
+        },a);
+
+        */
+
+
+
+        // 这个可以不看。  没意义，想看的话你就看。
+        /*
+        function fn(f1,f2,n){
+            // if(!isNaN(n)){          //isNaN    不是一个数值返回true      是一个数值返回false；
+                var m = +n;
+                console.log(m);
+                // f1();                
+            } else{
+                f2();
+            }
+        }
+
+        var a = prompt("请输入一个数值：");
+        fn(function (){
+            console.log("这是一个数值。")
+        },function (){
+            console.log("这不是一个数值");
+        },a);
+
+        */
+
+
+
+
+        // 判断用户输入的值     
+        // 第一个函数判断是不是一个数值，是的话输出值，不是的话输出“不是数值”。
+        // 第二个函数判断是不是一个字符串，是的话输出，不是的话输出“是一个数值”。
+        /*
+        function fn(f1,f2,n){
+            f1(n);
+            f2(n);
+        }
+        
+        
+        var m = prompt("请输入一个值：");
+
+        fn(function (a){
+            if(!isNaN(a)){
+                var c = +a;
+                console.log(c);
+            } else{
+                console.log("不是数值。");
+            }
+        },function (b){
+            if(isNaN(b)){
+                console.log(b);
+            }else{
+                console.log("是一个数值。");
+            }
+        },m);
+
+        */
+
+
+
+
+
+        //  这个是给函数命名，实参传函数的名字。
+
+        /*
+    
+        function fn(f1,f2,n){
+            f1(n);
+            f2(n);
+        }
+        
+        
+        var m = prompt("请输入一个值：");
+
+        function fn1(a){
+            if(!isNaN(a)){
+                var c = +a;
+                console.log(c);
+            } else{
+                console.log("不是数值。");
+            }
+        }
+        function fn2(b){
+            if(isNaN(b)){
+                console.log(b);
+            }else{
+                console.log("是一个数值。");
+            }
+        }
+
+        fn(fn1,fn2,m);
+       */
+
+
+
+
+
+        
+        // -------------------函数的运用--------------------------
+
+
+        // 用函数的方法call  或  apply  计算数组加上对象(Obj)的arg的值。
+        /*
+        var arr = [];
+        // 判断n   是不是一个数值；
+        var n;
+        while(true){
+            n = prompt("请输入一个数值：");
+            if(num(n)){
+                var shu = +n;
+                break;
+            } else{
+                alert("你输入的不是数值，请重新输入。");
+            }
+        }
+        // 只是为了练习     通过函数来判断n  是不是一个数值；
+        function num(n){
+            if(!isNaN(n)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        // 把n   转换成数值结束；
+
+        var Obj = {
+            grade : function(){
+                arg = 20;
+                return arg;
+            }
+        };
+
+        // 给数组赋初值；
+        for(var i = 0; i < n; i++){
+            arr[i] = +prompt("请输入数组的值：");
+        }
+
+        // 调用函数；
+        console.log(sum.call(Obj,arr));
+
+
+        function sum(brr){
+            var summ = 0;
+            for(var i = 0; i < brr.length; i++){
+                summ += brr[i]
+            }
+            summ += Obj.grade();
+            return summ;
+        }
+
+        */
+
+
+
+
+        // --------------------------数组栈的练习-----------------------------
+
+        // 方法一：
+
+        /*
+        var arr = new Array();
+        var n;
+
+        while(true){
+            n = prompt("请输入数组的长度：");
+            if(!isNaN(n)){
+                var m = +n;
+                break;
+            }else{
+                alert("你输入的不是一个数值，请重新输入：");
+            }
+        }
+        
+        for(var i = 0; i < m; i++){
+            arr[i] = +prompt("请输入数组第" + (i + 1) + "的值：");
+        }
+        Stack(arr);
+        function Stack(brr){
+            stackIn(brr);
+            stackOut(brr);
+        }
+
+        function stackIn(crr){
+            var crrCopy = [];
+            for(var i = 0; i < crr.length; i++){
+                var e = crrCopy.push(crr[i]);
+                console.log(e);
+            }
+            console.log(crrCopy);
+        }
+
+        function stackOut(crr){
+            var len = crr.length;
+            for(var i = 0; i < len; i++){
+                var e = crr.pop();
+                console.log(e);
+            }
+            console.log(crr);
+        }
+
+        */
+
+
+
+
+
+        // 方法二：
+
+        /*
+        var arr = new Array();
+        var n;
+
+        while(true){
+            n = prompt("请输入数组的长度：");
+            if(!isNaN(n)){
+                var m = +n;
+                break;
+            }else{
+                alert("你输入的不是一个数值，请重新输入：");
+            }
+        }
+        
+        for(var i = 0; i < m; i++){
+            arr[i] = +prompt("请输入数组第" + (i + 1) + "的值：");
+        }
+        Stack(arr);
+        function Stack(brr){
+            // stackIn(brr);
+            stackOut(stackIn(brr));
+        }
+
+        function stackIn(crr){
+            var crrCopy = [];
+            for(var i = 0; i < crr.length; i++){
+                var e = crrCopy.unshift(crr[i]);
+                console.log(e);
+            }
+            console.log(crrCopy);
+            return crrCopy;
+        }
+
+        function stackOut(crr){
+            var len = crr.length;
+            for(var i = 0; i < len; i++){
+                var e = crr.shift();
+                console.log(e);
+            }
+            console.log(crr);
+        }
+
+        */
+
+
+
+
+        // --------------------------数组队列的练习-----------------------------
+
+        // 方法一：
+
+        /*
+        var arr = new Array();
+        var n;
+
+        while(true){
+            n = prompt("请输入数组的长度：");
+            if(!isNaN(n)){
+                var m = +n;
+                break;
+            }else{
+                alert("你输入的不是一个数值，请重新输入：");
+            }
+        }
+        
+        for(var i = 0; i < m; i++){
+            arr[i] = +prompt("请输入数组第" + (i + 1) + "的值：");
+        }
+        Stack(arr);
+        function Stack(brr){
+            // stackIn(brr);
+            stackOut(stackIn(brr));
+        }
+
+        function stackIn(crr){
+            var crrCopy = [];
+            for(var i = 0; i < crr.length; i++){
+                var e = crrCopy.unshift(crr[i]);
+                console.log(e);
+            }
+            console.log(crrCopy);
+            return crrCopy;
+        }
+
+        function stackOut(crr){
+            var len = crr.length;
+            for(var i = 0; i < len; i++){
+                var e = crr.pop();
+                console.log(e);
+            }
+            console.log(crr);
+        }
+        */
+
+
+        // 方法二：
+
+        /*
+        var arr = new Array();
+        var n;
+
+        while(true){
+            n = prompt("请输入数组的长度：");
+            if(!isNaN(n)){
+                var m = +n;
+                break;
+            }else{
+                alert("你输入的不是一个数值，请重新输入：");
+            }
+        }
+        
+        for(var i = 0; i < m; i++){
+            arr[i] = +prompt("请输入数组第" + (i + 1) + "的值：");
+        }
+        Stack(arr);
+        function Stack(brr){
+            // stackIn(brr);
+            stackOut(stackIn(brr));
+        }
+
+        function stackIn(crr){
+            var crrCopy = [];
+            for(var i = 0; i < crr.length; i++){
+                var e = crrCopy.push(crr[i]);
+                console.log(e);
+            }
+            console.log(crrCopy);
+            return crrCopy;
+        }
+
+        function stackOut(crr){
+            var len = crr.length;
+            for(var i = 0; i < len; i++){
+                var e = crr.shift();
+                console.log(e);
+            }
+            console.log(crr);
+        }
+
+        */
+
+    
+
+    </script>
+
+
+    
+</body>
+</html>

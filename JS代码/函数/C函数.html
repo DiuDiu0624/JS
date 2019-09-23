@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数</title>
+
+    <style>
+        .biao {
+            border-collapse: collapse;
+            width: 40%;
+            margin: 100px auto 0px;
+        }
+
+        .biao,
+        tr,
+        td {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        /*
+        function hang(){
+            console.log("haha");
+            document.write("hello word!");
+        }
+        hang();
+        */
+
+
+
+
+        /*
+        console.log(shuChu(3,12));
+
+        function shuChu(a,b){
+            // sumHe(a,b);
+            // contJi(a,b);
+            // maxDa(a,b);
+            // minXiao(a,b);
+            var cha1 = contJi(a,b) - sumHe(a,b);
+            var cha = maxDa(a,b) - minXiao(a,b);
+            return [cha1,cha];
+        }
+        function sumHe(a,b){
+            var sum = a + b;
+            return sum;
+        }
+        function contJi(a,b){
+            var con = a * b;
+            return con;
+        }
+        function maxDa(a,b){
+            var max = a;
+            if(a < b){
+                max = b;
+            }
+            return max;
+        }
+        function minXiao(a,b){
+            var min = a;
+            if(a > b){
+                min = b;
+            }
+            return min;
+        }
+        */
+
+        
+
+
+
+
+
+        // -----------------------函数练习题----------------------------
+
+
+        //    1. 编写一个函数add，计算两个操作数相加的结果
+        //    输入：
+        //      两个操作数
+        //    输出：
+        //      两个操作数相加的结果
+        //      如果操作数缺失，则默认值为0来参与运算
+
+        /*
+        function add(a,b){
+            // var sum = 0;
+
+            if((a === 0 || a === null || a === undefined)&& (b === 0  || b === null || b === undefined)){
+                a = 0;
+                b = 0;
+                // sum = a + b;
+                return a + b;
+            } else if(b === 0  || b === null || b === undefined){
+                b = 0;
+                // sum = a + b;
+                return a + b;
+            }else{
+                return (a + b);
+            }
+        }
+        // 当用户不输入值，点确定，默认值是0；点取消默认是null;不传实参，函数有形参，会导致形参值位undefined；
+        var n = +prompt("请输入第一个值：");
+        var m = +prompt("请输入第二个值：");
+        //add(n,m);
+        console.log(add(n,m));
+        */
+
+
+
+
+
+        // 2. 编写一个函数add, 计算n个操作数相加的结果
+        //    输入：
+        //      n个操作数
+        //    输出：
+        //      n个操作数相加的结果
+
+
+        /*
+        function add() {
+            var sum = 0;
+            // arguments.length是计算实参的长度；
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+
+        console.log(add(1, 2, 3, 4, 5, 6, 7, 8));
+        */
+
+
+
+
+
+
+        //         3. 编写一个函数sayHello
+        //    输入： 
+        //      姓名
+        //    输出：
+        //      你好, 姓名
+        //      如果姓名缺失，则输出 你好
+
+
+       /*
+        function sayHello(userName){
+
+            console.log(userName);
+
+            if(userName === null || userName === "" || userName === undefined){
+                return "您好!";
+            } else {
+                return "您好," + userName;
+            } 
+        }
+
+        // 当不输值，直接点确定时，它是一个空字符串，点取消是null;
+        var usName = prompt("请输入姓名：");
+        // console.log(typeof(usName));
+        console.log(usName);
+
+        // 不给函数值，而函数有形参，这时形参的值就会变成undefined；
+        console.log(sayHello());
+        console.log(sayHello(usName));
+       */
+
+
+
+
+
+
+        // 4. 编写一个函数calcSum, 计算数组中所有元素的和
+        // 输入：
+        // 一个数组
+        // 输出：
+        // 数组元素的和
+
+
+       /*
+        function calcSum(arrc) {
+            var sum = 0;
+            for (var i = 0; i < arrc.length; i++) {
+                sum += arrc[i];
+            }
+            return sum;
+        }
+
+        var n = +prompt("请输入数组长度：");
+        var arr = [];
+        for (var i = 0; i < n; i++) {
+            arr[i] = +prompt("请输入值：");
+        }
+
+        // 函数可以输入数组名，即数组的地址。
+        //calcSum(arr);
+        console.log(calcSum(arr));
+        */
+
+
+
+
+
+        // 5. 编写一个函数arrToString, 在打印数组中元素的字符串形式
+        // 输入：
+        // 一个数组
+        // 输出：
+        // 数组元素的字符串形式
+        // 例如: [3, 4, 5]
+        // 输出： "3, 4, 5"
+
+        /*
+        function arrToString(arrc1){
+            // 定义个字符串   用于把 数组的值变成字符串   
+            var str = "[";
+            for(var i = 0; i < arrc1.length - 1; i++){
+                //用字符串把数组里的值连接起来
+                str += arrc1[i] + "," + " ";
+            }
+
+            str += arrc1[arrc1.length - 1] + "]";
+            //输出连接后的值
+            return str;
+
+            // 这种方法不适合；
+            // var sum = String(arrc1[0]);
+            // for(var i = 1; i < arrc1.length; i++){
+            //     sum += String(arrc1[i]);
+            // }
+            // return sum;
+        }
+
+        var n = +prompt("请输入数组长度:");
+        var arr = [];
+        for(var i = 0; i < n; i++){
+            arr[i] = +prompt("请输如数值：");
+        }
+
+        //arrToString(arr);
+        console.log(arrToString(arr));
+       */
+
+
+
+
+        // 6. 编写一个函数getMax, 得到数组中元素的最大值
+        // 输入：
+        // 一个数组
+        // 输出：
+        // 数组元素的最大值
+
+
+        /*
+        function getMax(arrc2){
+            var max = arrc2[0];
+            for(var i = 1; i < arrc2.length; i++){
+                if(max < arrc2[i]){
+                    max = arrc2[i];
+                }
+            }
+            return max;
+        }
+
+        var n = +prompt("请输入数组的长度：");
+        var arr = Array();
+        for(var i = 0; i < n; i++){
+            arr[i] = +prompt("请输入数值：");
+        }
+        //getMax(arr);
+        console.log(getMax(arr));
+        */
+
+
+        
+
+
+
+
+
+        // 7. 编写一个函数getMin, 得到数组中元素的最小值
+        // 输入：
+        // 一个数组
+        // 输出：
+        // 数组元素的最小值
+
+        /*
+         function getMin(arrc3){
+             var min = arrc3[0];
+             for(var i = 1; i < arrc3.length; i++){
+                 if(min > arrc3[i]){
+                     min = arrc3[i];
+                 }
+             }
+             return min;
+         }
+
+         var n = +prompt("请输入数组的长度：");
+         var arr = Array();
+         for(var i = 0; i < n; i++){
+             arr[i] = +prompt("请输入数值：");
+         }
+         //getMin(arr);
+         console.log(getMin(arr));
+         */
+
+
+
+
+        // 8. 编写一个函数getIndex， 得到数组中某个元素所在的位置
+        // 输入：
+        // 一个数组和要查找的元素
+        // 输出：
+        // 元素在数组中的下标（ 若不存在， 请返回 - 1）
+
+        /*
+        function getIndex(arrc4, cha){
+            for(var i = 0; i < arrc4.length; i++){
+                if(arrc4[i] === cha){
+                    return i;
+                }
+            }
+            if(i === arrc4.length){
+                return -1;
+            }
+        }
+
+        var n = +prompt("请输入数组的长度:");
+        var arr = Array(n);
+        for(var i = 0; i < n; i++){
+            arr[i] = +prompt("请输入数值：");
+        }
+        var a = +prompt("请输入你要查找的数值：");
+        console.log(getIndex(arr,a));
+        */
+
+
+        // 9. 编写一个函数getSelect， 实现“ 剪刀石头布” 游戏中的数字和字符的转换
+        // 输入：
+        //     [0, 2] 之间一个整数
+        // 输出：
+        // 剪刀 或 石头 或 布
+
+        /*
+        // 利用数组可以存放多值，可以很好地实现功能
+        // function getSelect(a){
+        //     var brr1 = ["剪刀","石头","布"];
+        //     return brr1[a];
+        // }
+
+        function getSelect(a) {
+            switch (a) {
+                case 0:
+                    console.log("剪刀");
+                    break;
+                case 1:
+                    console.log("石头");
+                    break;
+                case 2:
+                    console.log("布");
+                    break;
+                default:
+                    console.log("您输入的值有误。");
+                    break;
+            }
+        }
+
+        var n = Math.floor(Math.random() * 3);
+        // getSelect(n);
+        console.log(getSelect(n));
+        */
+
+
+
+        // 10. 编写一个函数createTable, 实现创建一个表格的功能
+        // 输入：
+        // 表格行数和列数
+        // 输出：
+        // 在body区域产生约定行列的表格（ 单元格内容用空格填充）
+
+        /*
+        function createTable(a,b){
+            document.write("<table class = 'biao'>");
+            for(var i = 1; i <= a; i++){
+                document.write("<tr>")
+                for(var j = 1; j <= b; j++){
+                    document.write("<td>&nbsp;</td>");
+                }
+                document.write("</tr>")
+            }
+            document.write("</table>");
+        }
+
+        var n = +prompt("请输入表格行数：");
+        var m = +prompt("请输入表格列数:");
+        createTable(n,m);
+
+        */
+
+
+
+        // 11. 编写一个函数arrayCopy, 实现数组复制功能
+        // 输入：
+        // 一个源数组
+        // 输出：
+        // 一个新数组， 内容和源数组一样
+
+        
+
+        function arrayCopy(arrc5){
+            var brrc5 = [];
+            for(var i = 0; i < arrc5.length; i++){
+                brrc5[i] = arrc5[i];
+            }
+            return brrc5;
+        }
+        var n = +prompt("请输入数组的长度:");
+        var arr = [];
+        for(var i = 0; i < n; i++){
+            arr[i] = +prompt("请输入数值:");
+        }
+        //arrayCopy(arr);
+        console.log(arrayCopy(arr));
+
+        
+
+
+
+        // 12. 编写一个函数arrayConcat， 实现数组连接功能
+        // 输入：
+        // 数组1， 数组2
+        // 输出：
+        // 一个新数组， 内容是两个数组合并的结果
+        // 例：
+        // 输入：[12, 45, 78], [88, 99, 77]
+        // 输出：[12, 45, 78, 88, 99, 77]
+
+
+
+
+        /*
+        function arrayConcat(arrc6,arrc7){
+            var brrc = [];
+            for(var i = 0; i < arrc6.length; i++){
+                brrc[i] = arrc6[i];
+            }
+            for(var i = 0; i < arrc7.length; i++){
+                brrc[i + arrc6.length] = arrc7[i];
+            }
+            return brrc;
+        }
+
+        var n = +prompt("请输入第一个数组的长度：");
+        var arr1 = [];
+        var arr2 = Array();
+        for(var i = 0; i < n; i++){
+            arr1[i] = +prompt("请输入第" + (i+1) + "个数");
+        }
+        var m = +prompt("请输入第二个数组的长度：");
+        alert("第二个数组的值随机.");
+        var min = +prompt("请输入最小值的范围：");
+        var max = +prompt("请输入最大值的范围：");
+        for(var i = 0; i < m; i++){
+            arr2[i] = Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        console.log(arrayConcat(arr1,arr2));
+
+        */
+
+
+
+
+        // 13. 编写一个函数arrayConcat， 实现数组连接功能， 在源数组上追加数组
+        // 输入：
+        // 数组1， 数组2
+        // 输出：
+        // 数组1， 内容是两个数组合并的结果
+        // 例：
+        // 输入：[12, 45, 78], [88, 99, 77]
+        // 输出：[12, 45, 78, 88, 99, 77]
+
+
+        /*
+        function arrayConCat(arrc8,arrc9){
+            var len = arrc8.length;
+            for(var i = 0; i < arrc9.length; i++){
+                arrc8[i+len] = arrc9[i];
+            }
+
+            return arrc8;
+        }
+
+        var n = +prompt("请输入第一个数组的长度：");
+        var arr1 = [];
+        var arr2 = Array();
+        for(var i = 0; i < n; i++){
+            arr1[i] = +prompt("请输入第" + (i+1) + "个数");
+        }
+        var m = +prompt("请输入第二个数组的长度：");
+        alert("第二个数组的值随机.");
+        var min = +prompt("请输入最小值的范围：");
+        var max = +prompt("请输入最大值的范围：");
+        for(var i = 0; i < m; i++){
+            arr2[i] = Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        console.log(arrayConCat(arr1,arr2));
+
+        */
+
+
+
+
+
+    
+
+        // function show(b,brr){};
+        //     a传的值就是a本身
+        //     arr传的值就相当于传的数组
+        //     调用函数时传的是实参 ，接受的一方是形参。
+        //                 （a,arr）           (b,brr)
+        // show(a,arr)
+
+
+        // undefined 、null 、 string 、 number 、 boolean  、 nan除这6种基本数据类型之外  其它都是引用型。
+
+        //     arr就是内存地址本身     3，4，5，6就是地址里存的值     相当于把3，4，5，6全部传给形参。
+        // var arr = [3 , 4 , 5 , 6];
+
+        //   a 就是数值本身。
+        //   var a = 0;
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    //子类(派生类)  和父类(超类，基类)
+    //人  构造函数
+    function Person(name,age){
+      this.name=name;
+      this.age=age;
+    }
+
+    Person.prototype.say=function(){
+      console.log(this.name+"is speaking....");
+    };
+
+    //学生对象  构造函数
+    function Student(name,age,no){
+      // this.name=name;
+      // this.age=age;
+      Person.call(this,name,age);//父类完成公有属性的初始化
+      //自身完成私有属性的初始化
+      this.no=no;
+    }
+
+    // Student.prototype.say=function(){
+    //   console.log(this.name+"is speaking....");
+    // };
+
+    Student.prototype.test=function(){
+      console.log(this.name+"在考试》。。。");
+    };
+
+    // //遍历person对象的原型,放入学生原型中
+    // for(var i in Person.prototype){
+    //   // console.log(i);
+    //   Student.prototype[i]=Person.prototype[i];
+    // }
+
+    // Student.prototype=new Person();//实现继承
+
+    var s=new Student('李四',20,'1000');
+    console.log(s.name,s.age,s.no);
+    s.say();
+
+    var p=new Person('王五',100);
+    p.test();
+    p.say();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

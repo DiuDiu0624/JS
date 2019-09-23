@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>花钱</title>
+</head>
+
+<body>
+    <script>
+        var x;
+        var y;
+        var z;
+        var sum=0;
+
+       
+            for (x = 0; x <= 100; x++) {
+                for (y = 0; y <= 50; y++) {
+                    for (z = 0; z <= 20; z++) {
+                         
+                        if(x+2*y+5*z===100){
+                           sum++; 
+                        document.write("可以有"+x+"张一块，"+y+"张两块的"+z+"张五块的<br\>")
+                        }
+                       
+                    }
+                }
+
+            }
+            alert("一共有"+sum+"种方法");
+
+        
+    </script>
+</body>
+
+</html>

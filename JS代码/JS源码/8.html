@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*
+      遍历1--100
+      7的倍数，个位为7，十位为7
+      num%7==0||num%10==7||parseInt(num/10)==7
+    */
+    // var sum=0;
+    // for(var i=1;i<100;i++){
+    //   if(i%3==0){
+    //     continue;
+    //   }
+    //   sum+=i;
+    // }
+
+    //求10阶乘
+
+    //递归s
+    // function getValue(num){
+    //   if(num==1){
+    //     return 1;
+    //   }
+    //   return num*getValue(num-1);
+    // }
+
+    // var sum=getValue(10);
+    // console.log(sum);
+    /*
+      10*getValue(9)
+      9*get(8)
+      8&get(7)
+      ...
+      1
+
+    */
+
+
+    /*
+        for(var i=1;i<=5;i++){
+          //打印一行*
+          for(var j=0;j<2*i-1;j++){
+            docuemnt.write('*');
+          }
+          docuemnt.write('<br>');
+        }
+
+
+    */
+
+    // （1）打印1--100以内的质数（只能被1和其本身整除的数就是质数，1不是质数）
+    /*
+      思路：
+        遍历1--100之间的数
+        遍历所有小于自身的数，如果能有被整除的，说明不是质数
+
+        反证法
+    */
+
+    for(var i=2;i<100;i++){
+      var flag=true;//假设每一个数字都是质数  true 质数 false 非质数
+      //找反例
+      for(var j=2;j<i;j++){
+        if(i%j==0){
+          flag=false;//推翻论点
+          break;
+        }
+      }
+      if(flag){
+        console.log(i);
+      }
+    }
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

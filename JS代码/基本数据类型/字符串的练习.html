@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串的练习</title>
+</head>
+<body>
+
+    <script>
+    
+        var str = "hanzi nishishama haishichun";
+
+        // --------------字符串的属性----------------
+        var len = str.length;                   //返回字符串的长度；
+        console.log(len);
+
+
+        // ---------------字符串的方法----------------
+        var a = str.charAt(4);                  //返回索引值所在的字符串；
+        console.log(a);
+
+        var b1 = "hehe";
+        var b = str.concat("haha",b1);          //连接字符串，如果不给参数，相当于复制字符串；
+        console.log(b);
+
+        var c = str.indexOf("i");                    //返回字符所在的索引位置，从前往后找；当查找的元素不再字符串里，返回-1；
+        var c1 = str.indexOf("h",4);                   //第二个参数，是从第二个参数的索引位置开始查找；
+        console.log(c,c1);
+
+        var d = str.lastIndexOf("n");                   //返回字符所在的索引位置，从后往前找；当查找的元素不再字符串里，返回-1；
+        var d1 = str.lastIndexOf("n",(str.length-5));      
+        console.log(d,d1,str);
+
+        var e = str.charCodeAt(1);                      //返回字符串对应的 ASCII值；
+        var e1 = str.charCodeAt(1).toString(16);        //把ASCII值，转换成十六进制；
+        console.log(e,e1);
+
+        var f = str.match("s");                        //正则表达式，返回字符串里的  "sha"  值，如果没有返回null;
+        console.log(f);
+
+        var g = str.search("s");                        //正则表达式，返回字符串里  "s"  的索引值；
+        console.log(g);
+
+        var h = str.replace("h","H");
+        var h1 = str.replace(/h/g,"H");                 //  /h/g,"H"   把字符串str里的所有"h"替换成"H";
+        console.log(h,h1);
+
+        // slice、substr、substring都是用于截取字符串；
+        var k = str.slice(-1);                          //通过-1可以取字符串的最后一个字符；
+        var k1 = str.slice(4,8);                        //用于截取 中间的字符串；
+        console.log(k,k1);
+
+        var i = str.substr(1,4);
+        console.log(i);
+
+        var l = str.substring(12,16);                   //它的参数值，不能为负；
+        console.log(l);
+
+        var str = "han,zi,ni,shi,sha,ma,hai,shi,chun";
+        var m = str.split("");                            //把字符串转换成数组、如果参数是空字符串("")，相当于每个字符是一个值；
+        var m1 = str.split(",");                        //给参数 就是从参数开始进行分割；
+        console.log(m,m1);
+
+        var str = "  hanzi  ";
+        console.log(str);
+        var n = str.trim();                     //去除前后空格；
+        console.log(n);
+        console.log(n.split());
+
+        console.log(n.toUpperCase());           //把字符转换成大写；
+        console.log(n.toLowerCase());           //把字符转换成小写；
+
+        var z = "cha";
+        var x = "hang";
+        console.log(z.localeCompare(x));                
+        console.log(x.localeCompare(z));                //字符串 x 的ASCII大于 z 的ASCII返回正数（1），反之为负数（-1）；
+        console.log(z.localeCompare("cha"));            //只有值全部相同时，才为0；
+        
+        var s = String.fromCharCode(97);                //把数值按ASCII转换成相应的字符；
+        console.log(s);
+    </script>
+    
+</body>
+</html>

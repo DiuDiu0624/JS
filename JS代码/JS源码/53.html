@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    div{text-align: center;}
+    canvas{border: 1px solid gray;}
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div>
+  <!-- 画布 -->
+  <canvas id="cvs" width="500" height="500"></canvas>
+</div>
+
+<script>
+  /*
+      两种绘制方法：
+        描边：  stroke()      strokeStyle
+        填充：  fill()        fillStyle
+
+  */
+
+  var cvs=document.querySelector('#cvs');
+  //获取画笔对象
+  var ctx=cvs.getContext("2d");//上下文对象
+  // console.log(ctx);
+  // ctx.strokeStyle='red';
+  ctx.fillStyle='red';
+
+  //绘制线段
+  // ctx.moveTo(100,100);//设置起点
+  // ctx.lineTo(200,200);//终点
+
+  //绘制三角形
+  ctx.moveTo(150,150);
+  ctx.lineTo(350,150);
+  ctx.lineTo(350,250);
+  // ctx.lineTo(150,150);//结束
+  ctx.closePath();//闭合路径
+
+  //绘制
+  // ctx.stroke();
+  ctx.fill();//填充
+
+
+  //开启新的路径
+  ctx.beginPath();
+  //绘制另一个三角形
+  ctx.fillStyle='green';
+  ctx.moveTo(150,250);
+  ctx.lineTo(250,250);
+  ctx.lineTo(250,350);
+  ctx.closePath();//
+
+  // ctx.stroke();
+
+  ctx.fill();
+
+</script>
+</body>
+</html>

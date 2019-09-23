@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业10</title>
+</head>
+
+<body>
+    <script>
+        var now = new Date();
+        var week = now.getDay();
+        var a = +prompt("请输入加油数量");
+        var b = +prompt("请输入油价");
+        var c = a * b;
+        var d; 
+        
+        var e;
+        if (week ===2) {
+            d= 0.9 * c;
+            e =c-d;
+            // document.write("今日油价为"+b+"元，应付金额"+c+"元，实付金额为"+d+"元,优惠了"+e+"元")
+        }
+        else if(week === 0) {
+            d = 0.85 * c;
+            e =c-d;
+            // document.write("今日油价为"+b+"元，应付金额"+c+"元，实付金额为"+d+"元")
+        }
+        else{
+            d= 1 * c;
+            e =c-d;
+            // document.write("今日油价为"+b+"元，应付金额"+c+"元，实付金额为"+c+"元")
+        }
+        document.write("今日油价为"+b+"元，应付金额"+c+"元，实付金额为"+d.toFixed(2)+"元,优惠了"+e.toFixed(2)+"元")
+
+    </script>
+</body>
+
+</html>

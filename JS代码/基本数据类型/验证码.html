@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证码</title>
+</head>
+
+<body>
+
+    <script>
+
+        
+        /*
+            length  可选  ， 产生的验证码的字符数量
+                不指定length,length默认为4
+            flag  可选  
+                不指定flag, flag默认为'd'  , 代表产生的验证码是纯数字
+                如果指定成'a', 代表产生的验证码是纯字母，大小写都可 
+                如果指定成'ad', 代表产生的验证码是字母和数字的混合
+        */
+
+        function getCode(length, flag) {
+            var arr = [];
+            var brr = [];
+            var crr = [];
+            for(var i = 0; i < 26; i++){
+                arr[i] = String.fromCharCode(65 + i);
+                brr[i] = String.fromCharCode(97 + i);
+            }
+            crr = arr.concat(brr);
+            //console.log(crr);
+
+            var number = [];
+            for(var i = 0; i < 10; i++){
+                number[i] = i;
+            }
+            //console.log(number);
+
+            var fuhe = number.concat(crr);
+
+            var yan = [];
+            if(flag === undefined || length === undefined){
+                if(length === undefined){
+                    length = 4;
+                }
+                flag = "d";
+                
+                for(var i = 0; i < length; i++){
+                    yan[i] = number[Math.floor(Math.random()*10)];
+                }
+                return yan.join();
+            } else if(/*length !== undefined && */flag === "a"){
+
+                for(var i = 0; i < length; i++){
+                    yan[i] = crr[Math.floor(Math.random()*52)];
+                }
+                return yan.toString();
+            }else{
+                for(var i = 0; i < length; i++){
+                    yan[i] = fuhe[Math.floor(Math.random()*62)];
+                }
+                return yan.join();
+            }
+
+        }
+
+        var a = "a";
+        console.log(getCode(6,a));
+        console.log(getCode());
+        console.log(getCode(3));
+        console.log(getCode(5,"ab"));
+
+        // console.log(show.apply(null,getCode(6,a)));
+        // function show(lianjie){
+        //     return lianjie;
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
+            length  可选  ， 产生的验证码的字符数量
+                不指定length,length默认为4
+            flag  可选  
+                不指定flag, flag默认为'd'  , 代表产生的验证码是纯数字
+                如果指定成'a', 代表产生的验证码是纯字母，大小写都可 
+                如果指定成'ad', 代表产生的验证码是字母和数字的混合
+        */
+        var herght = +prompt("请输入验证码的长度");
+        //这一部分是为了让用户输入两个选择，或者不输入，当用户不输入，默认就为空，为空时默认就选择为纯数字
+        while (true) {
+            var type = prompt("请选择生成类型\"a\"(纯字母大小写),\"ad\"(纯字母大小写和数字),默认纯数字");
+            if (type === "a" || type === "ad" || type === "") { //只能是这三个值，或者输入等于前两个，或者不输入等于空
+                break;
+            } else {
+                alert("请输入正确的选择")
+            }
+
+        }
+
+
+        function create(length, flag) {
+            var m = 0;
+            var n = 0;
+            var sum = "";
+            //这是判断长度，如果数值，就会等于数值，不是数值，或者为六个特殊值时，就等于四，过滤输入
+            length = length || 4;
+
+            if (flag === "a") {
+                n = 122;
+                m = 65;
+
+            } else if (flag === "ad") {
+                n = 122;
+                m = 48;
+
+            } else {
+                n = 57;
+                m = 48;
+            }
+
+            //这一部分是产生需要的验证码的重要组成部分，
+            for (var i = 0; i < length; i++) {
+
+                while (true) {
+
+                    a = Math.floor(Math.random() * (n - m) + m); //产生了一个(n - m) + m 其中n为最大值m为最小值的数
+
+                    if ((a < 91 || a > 96) && (a < 58 || a > 64)) {
+                        break;
+                    }
+                }
+
+                var b = String.fromCharCode(a);//将这个数转化为ascii只对应的符号，并将连接在sum字符串上。
+                sum += b;
+            }
+            return sum;//返回字符串
+        }
+
+        alert(create(herght, type))
+    </script>
+
+</body>
+
+</html>

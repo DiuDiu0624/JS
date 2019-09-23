@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*
+      click
+      mouseover   mouseout
+      mouseenter  mouseleave
+      mousemove   
+      mousedown   mouseup
+      focus       blur
+      change      
+      load
+      keydown   keyup   keypress
+      resize
+      scroll  滚动
+
+    */
+  </script>
+</head>
+<body>
+  <div style="height: 1000px;background:#ccc;"></div>
+  <img src="images/1.jpg" alt="">
+  <script>
+    var oIMg=document.images[0];
+
+    var sT=0;
+    
+    window.onscroll=function(){
+      console.log('run');
+      var t=document.documentElement.scrollTop;
+      // if(t-sT>0){
+      //   console.log('向下');
+      // }else{
+      //   console.log('向上');
+      // }
+      // sT=t;
+      
+    };
+
+    // 窗口尺寸发生改变事件
+    window.onresize=function(){
+      console.log('reseize');
+      setImg();
+    };
+
+    // function setImg(){
+    //   //获取屏幕宽度
+    //   var w=document.body.offsetWidth;
+    //   console.log(w);
+    //   oIMg.style.width=w+"px";
+    // }
+
+    // setImg();
+
+
+  </script>
+</body>
+</html>

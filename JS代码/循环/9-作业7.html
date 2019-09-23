@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业7</title>
+</head>
+<body>
+    <script>
+    var year =+prompt("请输入年份");
+    var a =year%4;
+    var b =year%100;
+    var c =year%400;
+    var result;
+    if(a===0&&b===0){
+        result="闰年";
+    }else if(c===0){
+        result="闰年";
+    }
+    else{
+        result="不是闰年";
+    }
+    alert(result);
+    </script>
+</body>
+</html>

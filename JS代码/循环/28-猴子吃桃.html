@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+
+        //猴子第一天摘了若干个桃子，每天早上吃的是前一天早上的一半多一个，第十天剩一下
+        var b=1;
+        var sum = 0;
+        for (var i = 1; i < 10; i++) {
+            var b = 2 * (b + 1);
+            // sum+=b;
+        //    b +=i;
+            document.write(b+"<br\>");
+           
+        } 
+        // document.write(sum+"<br\>");
+    </script>
+</body>
+
+</html>

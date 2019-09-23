@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业11</title>
+</head>
+
+<body>
+    <script>
+        // var a = prompt("请问您会html技术吗(yes/no)?");
+        // var b = prompt("请问您会css技术吗(yes/no)?");
+        // var c = prompt("请问您会javascript技术吗(yes/no)?");
+        // var result;
+        // if(a === "yes"&& b === "yes"&& c === "yes"){
+        //    result = "面试成功";
+        // }
+        // else{
+        //     result = "面试失败";
+        // }
+        // alert(result);
+        var a = prompt("请问您会html技术吗(yes/no)?");
+
+
+        if (a === "yes") {
+            // result = "面试成功"; 
+            var b = prompt("请问您会css技术吗(yes/no)?");
+            if (b ==="yes") {
+                var c = prompt("请问您会javascript技术吗(yes/no)?");
+                // result = "面试成功";
+                if (c === "yes") {
+                    result = "面试成功";
+                } else {
+                    result = "面试失败";
+                }
+            } else {
+                result = "面试失败";
+            }
+        } else {
+            result = "面试失败";
+        }
+        alert(result);
+    </script>
+</body>
+
+</html>

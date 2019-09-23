@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业5</title>
+</head>
+
+<body>
+    <script>
+        var result = prompt("以下哪个不是合法的变量名? \nA. $a    B. _123  \nC. Abc  D. *b ")
+        var right;
+        if (result === "A" || result === "a" || result === "B" || result === "b" || result === "C" || result === "c") {
+            right = "回答错误";
+        } else if (result ===" D"|| result === "d") {
+            right = "回答正确";
+        } else {
+            right = "请输入有效答案";
+        }
+        alert(right);
+    </script>
+</body>
+
+</html>

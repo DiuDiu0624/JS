@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    div{text-align: center;}
+    canvas{border: 1px solid gray;}
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div>
+  <!-- 画布 -->
+  <canvas id="cvs" width="500" height="500"></canvas>
+</div>
+
+<script>
+  /*
+      两种绘制方法：
+        描边：  stroke()      strokeStyle
+        填充：  fill()        fillStyle
+
+  */
+
+  var cvs=document.querySelector('#cvs');
+  //获取画笔对象
+  var ctx=cvs.getContext("2d");//上下文对象
+
+
+  // //绘制矩形
+  // ctx.strokeRect(100,100,200,100);
+
+  // ctx.fillStyle='red';
+  // ctx.fillRect(200,200,200,150);
+
+  //绘制圆
+  ctx.moveTo(250,250);
+  // ctx.arc(250,250,100,0,Math.PI/4,true);
+  ctx.arc(250,250,100,0,Math.PI/4);
+
+  //绘制
+  // ctx.stroke();
+  ctx.fill();
+
+
+  //饼状图位置
+  //https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E9%A5%BC%E7%8A%B6%E5%9B%BE&step_word=&hs=2&pn=34&spn=0&di=150260&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=0&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=undefined&cs=1924945202%2C404516555&os=586110663%2C1124440621&simid=0%2C0&adpicid=0&lpn=0&ln=1263&fr=&fmq=1562051269015_R&fm=&ic=undefined&s=undefined&hd=undefined&latest=undefined&copyright=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=http%3A%2F%2Faliyunzixunbucket.oss-cn-beijing.aliyuncs.com%2Fjpg%2F12656144427848e31ff6fa10807f6daf.jpg%3Fx-oss-process%3Dimage%2Fresize%2Cp_100%2Fauto-orient%2C1%2Fquality%2Cq_90%2Fformat%2Cjpg%2Fwatermark%2Cimage_eXVuY2VzaGk%3D%2Ct_100&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bwsty7g_z%26e3Bv54AzdH3F3tw5vijg2AzdH3Fm9bcb0_z%26e3Bip4s&gsm=0&rpstart=0&rpnum=0&islist=&querylist=&force=undefined
+  
+</script>
+</body>
+</html>

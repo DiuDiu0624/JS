@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 1. 把一个字符串转化为驼峰写法（例如：margin-left=>marginLeft）
+
+    // var str="margin-left";
+    // function demo1(str){
+    //   //获取-的位置
+    //   var index=str.indexOf('-');
+    //   str=str.replace('-','');
+    //   // console.log(str);
+    //   var c=str.charAt(index);
+    //   str=str.replace(c,c.toUpperCase());
+    //   console.log(str);
+    // }
+
+    // demo1(str);
+
+    // var str='jaldjfaldfjAjasdlfjasldfjasdlf';
+    // function demo2(str){
+    //   var arr=str.split('');//将字符串转化为内数组
+    //   arr.sort();//排序 --->相同字符在一起
+    //   str=arr.join('');
+    //   console.log(str);
+    //   //遍历字符串，统计相同字符个数
+    //   var cout=1;
+    //   var temp=str[0];
+    //   var arr=[];//用来保存指定字符和其次数
+    //   for(var i=1;i<str.length;i++){
+    //     //找到相同字符
+    //     if(temp===str[i]){
+    //       cout++;
+    //     }else{
+    //       //不相同，，统计完毕
+    //       var arr0=[];
+    //       arr0.push(temp,cout);//将字符和对应个数放入数组中
+    //       arr.push(arr0);//将本次统计数据放入数组中
+    //       //修改中间变量
+    //       temp=str[i];
+    //       cout=1;
+    //     }
+    //   }
+    //   var arr0=[];
+    //   arr0.push(temp,cout);//将字符和对应个数放入数组中
+    //   arr.push(arr0);//将本次统计数据放入数组中
+
+    //   console.log(arr);
+    // }
+
+    // demo2(str);
+
+    //[['a'm,1],['b',2]]
+
+
+      var str="   我们 是 哈哈 哈哈哈呵呵额鹅鹅鹅    ";
+      // console.log(str.length);
+      // var s=str.trim();//祛除首尾空格
+      // console.log(s.length,s);
+
+      //祛除头部空格
+      function trimStart(str){
+        for(var i=0;i<str.length;i++){
+          if(str[i]!=' '){
+            var str0=str.substring(i);
+            break;//结束遍历
+          }
+        }
+        // console.log(str0);
+        return str0;
+      }
+
+      //祛除尾部空格
+      function trimEnd(str){
+        var arr=str.split('');
+        arr.reverse();
+        str=arr.join('');
+        var str0=trimStart(str);
+        var s=str0.split('').reverse().join('');
+        console.log(s);
+      }
+    
+      trimEnd(trimStart(str));
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

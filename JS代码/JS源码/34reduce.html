@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*
+      reduce  高阶函数
+        求值  
+        reduce(function(prev,current,index,arr){},value);
+
+        参数一：函数
+        参数：默认值    prev默认值
+
+    */
+
+    
+
+    // arr.reduce(function(prev,curr){
+    //   console.log(prev,curr);
+    //   return prev+curr;
+    // });
+
+  //求和
+    // var sum=arr.reduce(function(prev,curr){
+    //   console.log(prev,curr);
+    //   return prev+curr;
+    // },0);
+
+    // var max=arr.reduce(function(prev,current){
+    //   return Math.max(prev,current);
+    // });
+
+    // console.log(max);
+
+    var arr=[100,200,300,10,100,300];
+
+    //数组去重
+    var arr0=arr.reduce(function(prev,cur){      
+      if(prev.indexOf(cur)==-1){
+        prev.push(cur);
+      }
+      return prev;
+    },[]);
+
+    console.log(arr0);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

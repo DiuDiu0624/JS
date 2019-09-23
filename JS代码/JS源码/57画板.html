@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{background: #ddd;}
+    canvas{background: #fff;}
+    div{text-align: center;}
+  </style>
+</head>
+<body>
+  <div>
+    <canvas width="1200" height="600"></canvas>
+  </div>
+
+  <script>
+      var cvs=document.querySelector('canvas');
+      var ctx=cvs.getContext('2d');//画笔
+
+      var isDown=false;//标识鼠标是否按下
+
+      //鼠标按下
+      cvs.onmousedown=function(e){
+        e=e||window.event;
+        isDown=true;
+        ctx.moveTo(e.pageX,e.pageY);//起点
+      };
+      //鼠标移动
+      cvs.onmousemove=function(e){
+        if(!isDown){
+          return;
+        }
+        e=e||window.event;
+        // ctx.moveTo(e.pageX,e.pageY);//起点
+        //起点，终点
+        var x=e.pageX-this.offsetLeft;
+        var y=e.pageY-this.offsetTop;
+        ctx.lineTo(x,y);
+        ctx.stroke();
+      };
+      //鼠标抬起
+      cvs.onmouseup=function(){
+        isDown=false;
+      };
+  </script>
+</body>
+</html>

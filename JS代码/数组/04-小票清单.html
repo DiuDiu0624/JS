@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            border: 1px solid yellowgreen;
+        }
+
+        tr {
+            width: 25%;
+            height: 50px;
+            text-align: center;
+
+
+        }
+
+        .second {
+            padding-left: 80px;
+            border-top: none;
+        }
+
+        .second tr {
+            text-align: left;
+
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var goods = ["方便面", "火腿肠", "乳酸菌", "草莓"];  // 商品名称
+        var goodsNum = [2, 3, 3, 2];                        // 商品数量（对应商品名称）
+        var goodsUnit = ["袋", "根", "瓶", "斤"];            // 商品单位 (对应商品名称)
+        var goodsPrice = [5.8, 3, 6.9, 12.5];            // 商品单价 (对应商品名称)
+        var zongjia = 0;
+        
+        var sumprice = goodsPrice[i] * goodsNum[i];
+        var i;
+
+        for (i = 0; i < 4; i++) {
+            var sumprice = goodsPrice[i] * goodsNum[i];
+            zongjia += sumprice;
+        }
+    
+        var money = prompt("您的商品总价为" + zongjia.toFixed(2) + "元，你要给我多少钱！")
+        if (money >= zongjia) {
+
+            document.write("<table>")
+            document.write("<tr>")
+            document.write("<th>名称</th>")
+            document.write("<th>数量</th>")
+            document.write("<th>单位</th>")
+            document.write("<th>单价</th>")
+
+            document.write("</tr>")
+            // document.write("</table>")
+            for (var i = 0; i < 4; i++) {
+                var sumprice = goodsPrice[i] * goodsNum[i];
+                document.write("<tr>");
+                document.write("<td>" + goods[i] + "</td>");
+                document.write("<td>" + goodsPrice[i] + "</td>");
+                document.write("<td>" + goodsNum[i] + goodsUnit[i] + "</td>");
+                document.write("<td>" + sumprice.toFixed(2) + "</td>");
+                document.write("</tr>");
+                document.write("<br\>")
+            }
+            var zhaoling = (money - zongjia).toFixed(2);
+            document.write("<table class='second'>");
+            document.write("<tr  class ='left'>");
+            document.write("<td  >" + "应付金额" + "</td>");
+            document.write("<td >" + zongjia.toFixed(2) + "</td>");
+            document.write("</tr>");
+            document.write("<tr>");
+            document.write("<td>" + "实付金额" + "</td>");
+            document.write("<td>" + money + "</td>");
+            document.write("</tr>");
+            document.write("<tr>");
+            document.write("<td >" + "找零" + "</td>");
+            document.write("<td >" + zhaoling + "</td>");
+            document.write("</tr>");
+            document.write("</table>");
+           
+        } else {
+            alert("钱不够！回家拿钱")
+           
+        }
+    </script>
+</body>
+
+</html>

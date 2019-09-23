@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*
+      求1-20以内的偶数和30-50之间的奇数的和之和
+    */
+
+  //带有返回值的函数
+    function getSum(m,n){
+      if(m>=n){return null;}
+      var sum=0;//保存和
+      for(var i=m;i<=n;i++){
+        sum+=i;
+      }
+      // console.log(sum);
+      return sum;//返回结果  结束函数
+    }
+    
+
+    var n1=getSum(1,20);
+    var n2=getSum(30,50);
+    console.log(n1+n2);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

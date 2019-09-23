@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小例子2</title>
+</head>
+
+<body>
+    <script>
+        var now = new Date();
+        var week = now.getDay();
+        var rn = Math.random() * 5 ;
+        var num = Math.ceil(rn);
+        var play
+        if (num === 1 || num === 2) {
+            play = "适合出去玩";
+        }else if(num === 3 || num === 4){
+            play = "今天不适合学习";
+        }else{
+            play = "今天不能出门";
+        }
+        document.write("今天是周"+week+",今天是"+num+"级风，"+play);
+    </script>
+</body>
+
+</html>

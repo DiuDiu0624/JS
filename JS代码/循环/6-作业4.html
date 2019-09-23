@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业4</title>
+</head>
+
+<body>
+    <script>
+        var now = new Date();
+        var week = now.getDay();
+        var study;
+        if (week === 1 || week === 2) {
+            study = "学习理念知识"
+        } else if(week === 3 || week === 4){
+            study = "企业实践"
+        }else if(week === 5 ){
+            study = "总结经验"
+        }else{
+            study = "休息"
+        }
+        alert(study);
+        
+    </script>
+</body>
+
+</html>

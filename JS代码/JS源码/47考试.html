@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    td{width: 80px;height: 150px;border: 1px solid gray;}
+  </style>
+</head>
+<body>
+  <!-- <button>哈哈</button>
+  <button>哈哈</button>
+  <button>哈哈</button>
+  <button>哈哈</button>
+  <button>哈哈</button> -->
+
+  <!-- <input type="checkbox">《<a href="#">同意xxxxz协议</a>》<br>
+  <button disabled id="btn">10s</button> -->
+  <!-- <table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table> -->
+
+  <input type="text" >
+  <script>
+    // var btns=document.querySelectorAll('button');
+    //为每一个按钮都追加点击事件
+    // for(var i=0,len=btns.length;i<len;i++){
+    //   btns[i].onclick=function(){
+    //     this.innerHTML='呜呜';
+    //     for(var j=0;j<len;j++){
+    //       if(btns[j]!=this){
+    //         btns[j].innerHTML="哈哈";
+    //       }
+    //     }
+    //   };
+    // }
+
+
+    //2.
+    // var btn=document.querySelector('#btn');
+    // var index=10;
+    // var timer=setInterval(function(){
+    //   index--;
+    //   if(index==0){
+    //     clearInterval(timer);
+    //     btn.disabled="";
+    //   }
+    //   btn.innerHTML=index+"s";
+    // },1000);
+
+    //3.评分控件
+    // var tds=document.querySelectorAll('tr td');
+    // //遍历
+    // for(var i=0;i<tds.length;i++){
+    //   tds[i].onclick=function(){
+    //     clearStyle();//清空上一次样式
+    //     for(var j=0;j<tds.length;j++){
+    //       tds[j].style.background='red';
+    //       //遇到当前对象时，结束循环
+    //       if(tds[j]==this){
+    //         break;
+    //       }          
+    //     }
+    //   };
+    // }
+
+
+    // function clearStyle(){
+    //   for(var j=0;j<tds.length;j++){
+    //       tds[j].style.background='#fff';                 
+    //     }
+    // }
+
+
+    //4.模拟placeholder
+    var ipt=document.querySelector('input');
+    ipt.value="输入搜索关键字";
+    ipt.style.color='#aaa';
+
+    ipt.onclick=function(){
+      this.focus();
+    };
+
+    ipt.onfocus=function(e){
+      // e.preventDefault();
+      this.setSelectionRange(0,0);
+      // this.selectionEnd=0;
+      // this.selectionStart=0;
+    };
+
+    //内容改变事件
+    ipt.onkeyup=function(){      
+      // console.log('run');
+      if(this.value.indexOf('输入')!=-1){  
+        var s=this.value.substring(7);
+        this.value=s; 
+        this.style.color='#333'    ;
+      }
+
+      if(this.value.length==0){
+        this.value="输入搜索关键字";
+        this.style.color='#aaa';
+      }
+    };
+
+
+  </script>
+</body>
+</html>

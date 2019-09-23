@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*    
+    倒计时：
+      截止日期：2019/6/26 12:00:00
+
+      还剩：xx小时xx分钟xx秒
+    */
+
+    
+    
+  </script>
+</head>
+<body>
+  还剩：<span></span>
+  <script>
+    //querySelector  querySelectorAll
+    var o=document.getElementsByTagName('span')[0];//页面元素
+    var endDate=new Date("2019/7/5 12:00:00");//截止日期
+
+    function getTime(){
+      var nowDate=new Date();
+      var diffTime=parseInt((endDate.getTime()-nowDate.getTime())/1000);
+      // console.log(diffTime);
+      //将时间转换为时分秒格式
+      var hour=parseInt(diffTime/3600);//小时
+      var s=diffTime%60;
+      var m=parseInt(diffTime/60)%60;
+
+      //对小于10的数字补零
+      hour=addZero(hour);
+      m=addZero(m);
+      s=addZero(s);
+      
+      var time=hour+"小时"+m+"分钟"+s+'秒';
+      o.innerHTML=time;
+      setTimeout(getTime,1000);
+    }
+    //小于10的数字补零
+    function addZero(num){
+      if(num<10){
+        return '0'+num;
+      }
+      return num;
+    }
+
+    getTime();
+  </script>
+</body>
+</html>

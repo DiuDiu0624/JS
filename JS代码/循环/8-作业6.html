@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业6</title>
+</head>
+<body>
+        <script>
+                var a = prompt("请a输入石头剪刀布");
+                var b = prompt("请b输入石头剪刀布");
+                var result;
+                if((a==="石头" && b==="剪刀")||(a==="剪刀" && b==="布")||(a==="布" && b==="石头")){
+                    result = "用户a,你赢了";
+                }
+                else if((a==="布" && b==="剪刀")||(a==="石头" && b==="布")||(a==="剪刀" && b==="石头")){
+                    result = "用户b,你赢了";
+                }
+                else{
+                    result="平局";
+                }
+                alert(result);
+            </script>
+</body>
+</html>
